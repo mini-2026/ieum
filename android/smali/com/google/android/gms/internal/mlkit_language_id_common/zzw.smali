@@ -1,0 +1,552 @@
+.class public abstract Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Map;
+.implements Ljava/io/Serializable;
+
+
+# instance fields
+.field private transient zza:Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+    .annotation runtime Ljavax/annotation/CheckForNull;
+    .end annotation
+.end field
+
+.field private transient zzb:Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+    .annotation runtime Ljavax/annotation/CheckForNull;
+    .end annotation
+.end field
+
+.field private transient zzc:Lcom/google/android/gms/internal/mlkit_language_id_common/zzq;
+    .annotation runtime Ljavax/annotation/CheckForNull;
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static zzc(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;
+    .locals 1
+
+    const-string p0, "optional-module-barcode"
+
+    const-string p1, "com.google.android.gms.vision.barcode"
+
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzn;->zza(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    filled-new-array {p0, p1}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    const/4 p1, 0x1
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, p0, v0}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzad;->zzg(I[Ljava/lang/Object;Lcom/google/android/gms/internal/mlkit_language_id_common/zzv;)Lcom/google/android/gms/internal/mlkit_language_id_common/zzad;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final clear()V
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final containsKey(Ljava/lang/Object;)Z
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/CheckForNull;
+        .end annotation
+    .end param
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final containsValue(Ljava/lang/Object;)Z
+    .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/CheckForNull;
+        .end annotation
+    .end param
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zzb()Lcom/google/android/gms/internal/mlkit_language_id_common/zzq;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzq;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final bridge synthetic entrySet()Ljava/util/Set;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zzf()Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/CheckForNull;
+        .end annotation
+    .end param
+
+    if-ne p0, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    instance-of v0, p1, Ljava/util/Map;
+
+    if-nez v0, :cond_1
+
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+
+    :cond_1
+    check-cast p1, Ljava/util/Map;
+
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public abstract get(Ljava/lang/Object;)Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/CheckForNull;
+        .end annotation
+    .end param
+    .annotation runtime Ljavax/annotation/CheckForNull;
+    .end annotation
+.end method
+
+.method public final getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/CheckForNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/CheckForNull;
+        .end annotation
+    .end param
+    .annotation runtime Ljavax/annotation/CheckForNull;
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    return-object p1
+
+    :cond_0
+    return-object p2
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zzf()Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzae;->zza(Ljava/util/Set;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final isEmpty()Z
+    .locals 1
+
+    invoke-interface {p0}, Ljava/util/Map;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final bridge synthetic keySet()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zzb:Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zze()Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zzb:Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .annotation runtime Ljavax/annotation/CheckForNull;
+    .end annotation
+
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final putAll(Ljava/util/Map;)V
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/CheckForNull;
+        .end annotation
+    .end param
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .annotation runtime Ljavax/annotation/CheckForNull;
+    .end annotation
+
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 6
+
+    .line 1
+    invoke-interface {p0}, Ljava/util/Map;->size()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    if-ltz v0, :cond_2
+
+    .line 6
+    .line 7
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    .line 8
+    .line 9
+    int-to-long v2, v0
+
+    .line 10
+    const-wide/16 v4, 0x8
+
+    .line 11
+    .line 12
+    mul-long/2addr v2, v4
+
+    .line 13
+    const-wide/32 v4, 0x40000000
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-wide v2
+
+    .line 20
+    long-to-int v0, v2
+
+    .line 21
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    .line 22
+    .line 23
+    .line 24
+    const/16 v0, 0x7b
+
+    .line 25
+    .line 26
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 27
+    .line 28
+    .line 29
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object v0
+
+    .line 33
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    .line 34
+    .line 35
+    .line 36
+    move-result-object v0
+
+    .line 37
+    const/4 v2, 0x1
+
+    .line 38
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 39
+    .line 40
+    .line 41
+    move-result v3
+
+    .line 42
+    if-eqz v3, :cond_1
+
+    .line 43
+    .line 44
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 45
+    .line 46
+    .line 47
+    move-result-object v3
+
+    .line 48
+    check-cast v3, Ljava/util/Map$Entry;
+
+    .line 49
+    .line 50
+    if-nez v2, :cond_0
+
+    .line 51
+    .line 52
+    const-string v2, ", "
+
+    .line 53
+    .line 54
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 55
+    .line 56
+    .line 57
+    :cond_0
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    .line 58
+    .line 59
+    .line 60
+    move-result-object v2
+
+    .line 61
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 62
+    .line 63
+    .line 64
+    const/16 v2, 0x3d
+
+    .line 65
+    .line 66
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 67
+    .line 68
+    .line 69
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    .line 70
+    .line 71
+    .line 72
+    move-result-object v2
+
+    .line 73
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 74
+    .line 75
+    .line 76
+    const/4 v2, 0x0
+
+    .line 77
+    goto :goto_0
+
+    .line 78
+    :cond_1
+    const/16 v0, 0x7d
+
+    .line 79
+    .line 80
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 81
+    .line 82
+    .line 83
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 84
+    .line 85
+    .line 86
+    move-result-object v0
+
+    .line 87
+    return-object v0
+
+    .line 88
+    :cond_2
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    .line 89
+    .line 90
+    const-string v2, "size cannot be negative but was: "
+
+    .line 91
+    .line 92
+    invoke-static {v0, v2}, LX0/a;->m(ILjava/lang/String;)Ljava/lang/String;
+
+    .line 93
+    .line 94
+    .line 95
+    move-result-object v0
+
+    .line 96
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    .line 97
+    .line 98
+    .line 99
+    throw v1
+.end method
+
+.method public final bridge synthetic values()Ljava/util/Collection;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zzb()Lcom/google/android/gms/internal/mlkit_language_id_common/zzq;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public abstract zza()Lcom/google/android/gms/internal/mlkit_language_id_common/zzq;
+.end method
+
+.method public final zzb()Lcom/google/android/gms/internal/mlkit_language_id_common/zzq;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zzc:Lcom/google/android/gms/internal/mlkit_language_id_common/zzq;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zza()Lcom/google/android/gms/internal/mlkit_language_id_common/zzq;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zzc:Lcom/google/android/gms/internal/mlkit_language_id_common/zzq;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public abstract zzd()Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+.end method
+
+.method public abstract zze()Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+.end method
+
+.method public final zzf()Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zza:Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zzd()Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/mlkit_language_id_common/zzw;->zza:Lcom/google/android/gms/internal/mlkit_language_id_common/zzx;
+
+    :cond_0
+    return-object v0
+.end method

@@ -1,0 +1,48 @@
+version: 2.10.0
+apkFileName: original.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+  tag: null
+sdkInfo:
+  minSdkVersion: 24
+  targetSdkVersion: 34
+packageInfo:
+  forcedPackageId: 127
+  renameManifestPackage: null
+versionInfo:
+  versionCode: 25
+  versionName: 1.25
+resourcesAreCompressed: false
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  common.properties: 8
+  firebase-annotations.properties: 8
+  firebase-components.properties: 8
+  firebase-encoders-json.properties: 8
+  firebase-encoders.properties: 8
+  image.properties: 8
+  language-id-common.properties: 8
+  language-id.properties: 8
+  play-services-base.properties: 8
+  play-services-basement.properties: 8
+  play-services-mlkit-text-recognition-chinese.properties: 8
+  play-services-mlkit-text-recognition-common.properties: 8
+  play-services-mlkit-text-recognition-devanagari.properties: 8
+  play-services-mlkit-text-recognition-japanese.properties: 8
+  play-services-mlkit-text-recognition-korean.properties: 8
+  play-services-tasks.properties: 8
+  translate.properties: 8
+  transport-api.properties: 8
+  transport-backend-cct.properties: 8
+  transport-runtime.properties: 8
+  vision-common.properties: 8
+  vision-interfaces.properties: 8
+doNotCompress:
+- resources.arsc
+- jpg
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm
+- png
