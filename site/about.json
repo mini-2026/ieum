@@ -1,0 +1,16 @@
+{
+ "name": "이음",
+ "apk": "ieum.apk",
+ "tag": "code",
+ "web": false,
+ "webroot": "assets",
+ "intro": [
+  "듣고, 말하고, 보면서 번역해요.",
+  "인터넷이 없어도 되는 여행 문장집과 한글 발음이 있어요.",
+  "자주 쓰는 문장은 ⭐ 내 문장에 모아 둬요."
+ ],
+ "redirects": [
+  "guide.html",
+  "app.html"
+ ]
+}
