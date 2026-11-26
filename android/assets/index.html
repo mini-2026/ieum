@@ -96,6 +96,7 @@ p{margin:0}
 .plate .code{grid-column:1;grid-row:1/3}.plate .chev{grid-column:3;grid-row:1/3}.plate .nm{grid-column:2;grid-row:2;line-height:1.2}
 @media (max-width:380px){.plate{padding:2px 8px;column-gap:6px}.plate .nm{font-size:14px}.tool span{letter-spacing:-.05em}}
 @media (max-width:340px){.plate .chev{display:none}.tool span{font-size:13px}.brand h1{font-size:18px}}
+@media (max-width:320px){.tool{min-width:44px}.brand h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
 .code{font-family:var(--f-sign);font-weight:700;font-size:24px;line-height:1;color:var(--sign);letter-spacing:.02em;flex:none}
 .nm{font-weight:500;min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .plate .chev{width:16px;height:16px;color:var(--board-muted)}
@@ -147,7 +148,7 @@ p{margin:0}
 .act-b em{font-style:normal;font-family:var(--f-sign);font-weight:700;background:var(--sign);color:var(--on-sign);border-radius:3px;padding:0 5px;line-height:18px}
 .kick{font-size:11px;font-weight:700;color:var(--board-muted);margin-top:6px}
 .replies{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}
-.rchip{height:44px;padding:0 11px;border-radius:4px;border:1px solid var(--board-line);color:var(--on-board);font-size:13px;font-weight:500}
+.rchip{height:44px;min-width:48px;padding:0 11px;border-radius:4px;border:1px solid var(--board-line);color:var(--on-board);font-size:14px;font-weight:500}
 .speaking .w1{animation:wave 1s infinite}
 .speaking .w2{animation:wave 1s .25s infinite}
 @keyframes wave{0%,100%{opacity:.2}50%{opacity:1}}
@@ -214,6 +215,8 @@ p{margin:0}
 .seg button:first-child{border-left:0}
 .seg button[aria-pressed="true"]{background:var(--board);color:var(--sign)}
 .zoomed .plate .nm{display:none}
+/* 글자 크게·아주 크게(화면 확대): 위쪽 버튼 4개와 언어 칸이 화면 밖으로 밀리지 않게 */
+.zoomed .brand h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.zoomed .tool{min-width:44px}.zoomed .tool span{font-size:13px}.zoomed .plate .chev{display:none}.zoomed .who{white-space:nowrap}.zoomed .sign small{white-space:nowrap;letter-spacing:0}
 .chip.add{border-style:dashed;font-weight:700}
 .chip.wait{color:var(--muted);border-style:dashed}
 .wait-why{font-size:12px;opacity:.8}
@@ -291,12 +294,12 @@ p{margin:0}
 .big.sos .big-say{background:var(--on-rec);color:var(--rec)}
 .big.sos .big-say.alt{background:transparent;color:inherit}
 .sos-lines{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
-.sos-lang{align-self:flex-start;min-height:36px;padding:4px 12px;border-radius:999px;border:1.5px solid var(--rec-line);font-weight:700;font-size:13px;margin-bottom:6px}
+.sos-lang{align-self:flex-start;min-height:44px;padding:4px 12px;border-radius:999px;border:1.5px solid var(--rec-line);font-weight:700;font-size:13px;margin-bottom:6px}
 .sos-b{min-height:44px;padding:6px 10px;border-radius:var(--r);border:1.5px solid var(--rec-line);font-weight:700;font-size:14px;text-align:left}
 .sos-b.on{background:var(--on-rec);color:var(--rec);border-color:var(--on-rec)}
 .sos-nums{display:grid;gap:2px;border-top:2px solid var(--rec-line);padding-top:8px}
 .sos-head{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;font-weight:700}
-.sos-country{display:inline-flex;align-items:center;gap:4px;height:36px;padding:0 6px 0 10px;border-radius:4px;background:var(--rec-shade);font-weight:700}
+.sos-country{display:inline-flex;align-items:center;gap:4px;height:44px;padding:0 6px 0 10px;border-radius:4px;background:var(--rec-shade);font-weight:700}
 .sos-country .i{width:16px;height:16px}
 .sos-num{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:4px 0;text-align:left;width:100%}
 .sos-num span{font-size:14px}
@@ -348,7 +351,7 @@ p{margin:0}
 .o-main b{font-size:16px;overflow-wrap:anywhere}
 .o-main small{color:var(--muted);font-size:13px;overflow-wrap:anywhere}
 .step{flex:none;display:flex;align-items:center;gap:2px}
-.step button{width:38px;height:38px;border-radius:4px;border:1px solid var(--line);display:grid;place-items:center;font-size:20px;font-weight:700;line-height:1}
+.step button{width:44px;height:44px;border-radius:4px;border:1px solid var(--line);display:grid;place-items:center;font-size:20px;font-weight:700;line-height:1}
 .step .q{min-width:26px;text-align:center;font-family:var(--f-sign);font-weight:700;font-size:20px;color:var(--muted)}
 .o-row.on .q{color:var(--ink)}
 .o-row.on .o-main b{text-decoration:underline;text-decoration-color:var(--sign);text-decoration-thickness:4px;text-underline-offset:-1px;text-decoration-skip-ink:none}
@@ -363,7 +366,7 @@ p{margin:0}
 
 .toast{position:fixed;z-index:80;top:calc(env(safe-area-inset-top,0px) + 12px);left:50%;transform:translateX(-50%);width:max-content;max-width:min(92vw,460px);padding:10px 14px;border-radius:var(--r);background:var(--board);color:var(--on-board);border:1px solid var(--board-line);box-shadow:var(--shadow);font-size:14px;line-height:1.45;pointer-events:none}
 .toast.has-act{pointer-events:auto;display:flex;align-items:center;gap:12px}
-.toast.has-act button{min-height:36px;padding:0 12px;border:0;border-radius:8px;background:transparent;color:inherit;font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+.toast.has-act button{min-height:44px;padding:0 12px;border:0;border-radius:8px;background:transparent;color:inherit;font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
 
 @media (hover:hover){
   .tool:hover,.plate:hover,.card.listen .act-b:hover,.rchip:hover,.fm-b:hover,.lens-b:not(.main):hover{background:var(--board-hover)}
@@ -426,7 +429,7 @@ button.sign > small{font-size:14px}
       <form class="compose" id="compose" autocomplete="off">
         <div class="field">
           <span class="mode-chip" id="modeChip" hidden><span id="modeLabel"></span><button type="button" id="modeX" aria-label="입력 방식 되돌리기"><svg class="i" data-ic="close"></svg></button></span>
-          <input id="txt" type="text" data-max="500" enterkeyhint="send" placeholder="글로 써도 돼요 · 언어는 알아서 맞춰요" aria-label="번역할 글">
+          <input id="txt" type="text" data-max="500" enterkeyhint="send" placeholder="어느 언어든 글로 써도 돼요" aria-label="번역할 글">
         </div>
         <button class="send" id="sendBtn" type="submit" aria-label="번역하기" disabled><svg class="i" data-ic="send"></svg></button>
       </form>
@@ -1331,7 +1334,7 @@ button.sign > small{font-size:14px}
     if (mode) { modeChip.className = 'mode-chip ' + mode; modeLabel.textContent = (mode === 'speak' ? '말하기 ' : '듣기 ') + route(mode); }
     input.placeholder = mode === 'speak' ? nameKo(S.me) + '로 쓰면 ' + nameKo(S.them) + '로 읽어 드려요'
       : mode === 'listen' ? '상대가 한 말(' + nameKo(S.them) + ')을 적어 주세요'
-      : '글로 써도 돼요 · 언어는 알아서 맞춰요';
+      : '어느 언어든 글로 써도 돼요';
   }
   function onSubmit(e) {
     e.preventDefault();
@@ -1844,8 +1847,8 @@ button.sign > small{font-size:14px}
       S.addr ? h('button', { class: 'danger', type: 'button', onclick: () => { S.addr = null; store.set('addr', null); closeSheet(); toast('주소 카드를 지웠어요.'); } }, '주소 카드 지우기') : null));
   }
   function addrForm() {
-    const name = h('input', { id: 'aName', type: 'text', placeholder: '예: 선라이즈 호텔', autocomplete: 'off' });
-    const addr = h('textarea', { id: 'aAddr', placeholder: '예: 1-2-3 Shinjuku, Tokyo' });
+    const name = h('input', { id: 'aName', type: 'text', placeholder: '예: 선라이즈 호텔', autocomplete: 'off', maxlength: '80' });
+    const addr = h('textarea', { id: 'aAddr', placeholder: '예: 1-2-3 Shinjuku, Tokyo', maxlength: '400' });
     if (S.addr) { name.value = S.addr.name || ''; addr.value = S.addr.address || ''; }
     const f = h('form', { class: 'form' },
       h('label', { for: 'aName' }, '숙소 이름 (없어도 돼요)'), name,
@@ -2343,7 +2346,7 @@ function askLeave(box, doClose) {
 
 
 <!--APPINFO--><script>
-window.APP_INFO={"name": "이음", "repo": "mini-2026/ieum", "mount": "#verTxt", "notes": [{"v": "current", "d": "2026.11.26", "items": ["👓 번역 방향(EN → KO) 글자를 더 크게 했어요"]}, {"v": "v1.29", "d": "2026.11.26", "items": ["🛡 내용이 빈 백업 파일은 불러오지 않아요. 지금 기록이 지워지지 않게 막았어요", "✏️ 내 문장을 저장한 뒤에는 '적던 글이 남아 있어요' 알림이 다시 뜨지 않아요", "🔤 'Wi-Fi'처럼 원래 영어인 말은 영어로 적고, 말투를 맞췄어요"]}, {"v": "v1.28", "d": "2026.11.26", "items": ["⬇️ 새 버전을 앱 안에서 바로 받아요. 버전 정보 창에서 '업데이트 받기'를 누르면 받는 정도(%)가 보이고, 다 받으면 설치 화면이 열려요. 받은 파일은 앱을 다시 열 때 저절로 지워져서 폰에 쌓이지 않아요", "🔒 받은 파일이 이음에서 만든 진짜 새 버전인지 확인한 뒤에만 설치해요. 잘 안 되면 '브라우저로 받기'를 눌러 주세요", "💾 백업 파일이 너무 크면(10MB 넘음) 그냥 멈추지 않고 파일 크기와 함께 알려 드려요. 파일을 읽지 못했을 때도 알려 드려요"]}, {"v": "v1.27", "d": "2026.11.26", "items": ["💾 '⭐ 내 문장 쓰기'·'주소 직접 쓰기'에서 글을 적다가 × 를 눌러도 '저장할까요?'라고 물어봐요. 적은 글이 말없이 사라지지 않아요", "🗑 번역된 기록도 하나씩 지울 수 있어요. 기록 아래 '지우기'를 누르면 돼요", "🧹 설정의 '기록 모두 지우기'를 눌러도 ⭐ 즐겨찾기한 기록과 내 문장은 남아요. 잘못 눌렀으면 '되돌리기'로 되살려요", "🔊 사진 번역(보기) 카드에도 '읽어 주기'가 생겨서 번역을 소리로 들려줄 수 있어요", "📷 카메라 권한을 거부했어도 '설정 열기'를 누르면 바로 허용하러 갈 수 있어요", "✍️ 글을 500자 넘게 넣으면 500자까지만 번역한다고 알려 드려요", "👀 좁은 화면에서도 언어 이름(한국어·영어)이 잘리지 않고, 버튼과 글씨를 더 크게 키웠어요", "✏️ 즐겨찾기 안내, 언어 바꾸기 안내, 주문하기 문구('메뉴를 눌러 담아 주세요'), 멈추기 버튼 그림을 알기 쉽게 다듬었어요", "🔒 개인정보 안내에 말소리 인식(Google 음성 인식)과 Google 번역 기능의 익명 사용 통계를 쉽게 적었어요"]}, {"v": "v1.26", "d": "2026.11.25", "items": ["⭐ 내 문장에 이미 있는 문장을 또 적으면 알려 드려요"]}, {"v": "v1.25", "d": "2026.11.20", "items": ["📝 적던 글 지키기: 글을 적다가 앱이 꺼져도 사라지지 않아요. 다시 열어 같은 칸을 열면 적던 글이 그대로 이어져요 (필요 없으면 '버리기'를 눌러 주세요)"]}, {"v": "v1.24", "d": "2026.11.20", "items": ["💾 '저장할까요?' 창에서 '다음부터 묻지 않고 바로 저장'을 누르면, 다음부터는 닫을 때 묻지 않고 저장해요. 저장한 뒤 뜨는 '다시 묻기'를 누르면 다시 물어봐요"]}, {"v": "v1.23", "d": "2026.11.20", "items": ["💾 글을 적던 창을 × 나 뒤로 가기로 닫으면 '저장할까요?'라고 물어봐요. '저장'·'저장 안 함'·'계속 적기' 중에 골라 주세요"]}, {"v": "v1.22", "d": "2026.11.20", "items": ["✋ 글을 적던 창의 바깥을 실수로 눌러도 창이 닫히지 않아요. 적던 내용이 사라지지 않게 '입력한 내용이 있어요'라고 알려 드려요. 닫으려면 × 버튼을 눌러 주세요", "↩️ 기록을 지운 뒤에도 몇 초 동안 '되돌리기'가 나와요. 잘못 지웠으면 눌러서 그대로 되살려요"]}, {"v": "v1.21", "d": "2026.11.18", "items": ["✏️ 문구 다듬기: 주소 고르는 창의 '고르세요'·'누르세요'를 '골라 주세요'·'눌러 주세요'로 부드럽게 바꿨어요"]}, {"v": "v1.20", "d": "2026.11.15", "items": ["✏️ 문구 다듬기: '말하세요'·'시작하세요'를 '말해 주세요'·'시작해요'처럼 부드럽게 바꾸고, 띄어쓰기(읽어 드려요·보여 드려요)를 맞췄어요. 비밀번호·저장 공간 안내를 다른 앱과 같은 말로 맞추고, '내 데이터 백업'을 '내 기록 백업'으로 바꿨어요"]}, {"v": "v1.19", "d": "2026.11.13", "items": ["⭐ '내 문장 쓰기'에서 번역을 못 해도(번역 팩이 없을 때 등) 적은 문장은 그대로 저장돼요. 앱을 다시 열면 알아서 번역해 보고, '번역 다시 시도'를 눌러도 돼요", "🌗 설정에 화면 색(폰 설정 따라·밝게·어둡게)이 생겼어요", "🔒 새로 만드는 백업 비밀번호는 8글자 이상이에요. 숫자만 쓰면 한 번 더 물어봐요. 예전에 만든 6글자 비밀번호 백업도 그대로 열려요", "👆 문장 버튼과 왼쪽 아래 버전 글씨를 손가락으로 누르기 쉽게 키웠어요", "🔤 '안드로이드'처럼 낱말 중간에서 줄이 바뀌지 않게 했어요", "🚀 기록이 많아도 빨리 열리게 최근 60개부터 보여 주고, '이전 기록 더 보기'로 더 볼 수 있어요", "💾 저장하지 못했을 때 안내를 '앱 저장 공간이 가득 차서…'로 알기 쉽게 바꾸고, 다시 실패하면 다시 알려 드려요", "🧭 버튼 이름을 다른 앱과 맞췄어요(예시로 둘러보기·예시 닫기·새 버전이 나왔어요)", "🛡 앱을 만드는 과정(GitHub 빌드)에 쓰는 도구를 정해진 판으로 고정해 더 안전하게 했어요"]}, {"v": "v1.18", "d": "2026.11.13", "items": ["🆘 위급 카드의 긴급 번호를 상대 언어가 아니라 '지금 있는 나라'로 골라요. 서울에서 영어를 골라도 미국 911이 아니라 한국 112·119가 나와요", "🌏 나라는 폰이 알아서 고르고(통신망·시간대), 위급 카드나 설정에서 바꿀 수 있어요. 다른 나라로 옮겨 가면 다시 알아서 골라요. 필리핀·싱가포르·호주·영국·캐나다 등 58개 나라 번호를 넣었어요", "🔒 백업 파일을 비밀번호(6글자 이상)로 잠글 수 있어요. 비밀번호를 아는 사람만 열 수 있어요", "🔠 설정에 글자 크기(보통·크게·아주 크게)가 생겼어요", "🗂 기록을 60개에서 200개까지 남겨요(설정에서 60·200·500개). 기록 찾기에 '공항 택시'처럼 여러 낱말을 쓰면 모두 들어간 기록만 보여요", "⭐ 내 문장 탭에서 '＋ 문장 쓰기'로 할 말을 미리 적어 두면 번역해서 바로 넣어 둬요", "🔢 버전 번호가 왼쪽 아래·설정·정보 창 어디서나 같은 번호로 보여요. 새 버전 확인은 버전 정보 창 한 곳에서 해요", "🛡 보안: 폰 자동 백업에 기록이 섞여 나가지 않게 하고, 바깥으로 여는 주소는 이 앱 GitHub 주소만, 앱 화면의 인터넷 연결은 새 버전 확인만 허락했어요", "👀 위쪽 아이콘 글자와 문장 버튼을 키우고, 위급 카드 빨간색을 더 진하게 해서 잘 보이게 했어요. 옆으로 밀면 더 있는 줄은 오른쪽 끝이 흐려져요", "💾 폰 저장 공간이 부족해서 저장하지 못하면 알려 드려요"]}, {"v": "v1.17", "d": "2026.11.12", "items": ["📦 앱 용량을 절반 가까이 줄였어요: 요즘 폰(64비트)에 맞는 번역 엔진만 넣었어요"]}, {"v": "v1.16", "d": "2026.11.08", "items": ["📖 내장 문장집: 영어·일본어·중국어·베트남어·태국어 문장은 처음부터 인터넷 없이 바로 (식당·호텔·교통·쇼핑·공항·위급)", "🗣️ 한글 발음: 문장집 번역 아래에 '곤니치와'처럼 한글로 읽는 법을 같이 보여 드려요", "⭐ 내 문장: 즐겨찾기한 말이 문장 줄 맨 앞 탭에 모여서 한 번에 다시 말해요", "✈️ Aero에서 다음 여행 나라 받기: 항공권 앱 Aero의 '이음으로 준비' 버튼을 누르면 출발 전에 그 나라 말로 바로 맞춰져요"]}, {"v": "v1.15", "d": "2026.11.05", "items": ["보안 강화: 앱 화면이 허락된 곳 말고는 스크립트를 불러오지 못하게 막고, 폰의 다른 파일을 읽지 못하게 하고, 업데이트 파일은 이 앱 저장소 주소에서만 받아요"]}, {"v": "v1.14", "d": "2026.11.05", "items": ["상황별 문장: 식당·호텔·교통·쇼핑·공항 문장을 눌러서 바로 (한 번 번역하면 다음부터 인터넷 없이 바로)", "해외에 가면 폰 시간대를 보고 상대 언어를 그 나라 말로 바꿀지 한 번 물어봐요"]}, {"v": "v1.13", "d": "2026.11.05", "items": ["크게 보기를 열면 밝은 곳에서도 잘 보이게 화면이 가장 밝아져요 (닫으면 원래대로)", "왼쪽 아래 버전 → 내 기록 백업: 기록을 파일로 저장했다가 새 폰에서 불러오기"]}, {"v": "v1.12", "d": "2026.11.01", "items": ["사진 번역(보기) 카드에도 크게 보기"]}, {"v": "v1.11", "d": "2026.11.01", "items": ["위급 카드가 지금 있는 나라 말로 떠요 (일본이면 일본어). 상대 언어로도 바꿀 수 있어요", "번역 기록에서 찾기, 자주 쓰는 번역은 ☆ 즐겨찾기 (오래돼도 안 지워져요)"]}, {"v": "v1.10", "d": "2026.11.01", "items": ["왼쪽 아래 버전을 누르면 앱 정보·업데이트 내용·개인정보를 볼 수 있어요", "새 버전이 나오면 버전 글씨가 노란색으로 바뀌어요"]}, {"v": "v1.8", "d": "2026.11.01", "items": ["첫 앱 버전: 듣기·말하기·보기와 새 기능 7가지", "처음 열면 빈 화면에서 시작 (예시는 '예시로 둘러보기'에서만)", "번역·글자 읽기를 폰 안에서, 번역 팩을 한 번 받으면 인터넷 없이도 번역", "카메라로 비추면 글자 위에 번역이 겹쳐 보여요", "환율을 하루 한 번 받고, 지금 있는 나라 통화·긴급 번호를 자동으로", "홈 화면 위젯"]}], "privacy": "번역한 글·사진·기록은 이 폰에만 저장돼요(폰 자동 백업에도 넣지 않아요). 글 번역과 사진 글자 읽기는 폰 안에서 해요. 말소리를 글로 바꾸는 건 폰에 있는 Google 음성 인식을 써서, 인터넷이 켜져 있으면 말소리가 Google로 갈 수 있어요. Google 번역 기능은 어떤 기능을 얼마나 썼는지 같은 익명 사용 통계를 Google에 보내요. 그 밖에 인터넷은 번역 팩·글자 읽기 기능 받기(Google), 환율 받기(open.er-api.com), 새 버전 확인·받기(GitHub)에만 써요.", "backup": {"keys": ["ieum.*"], "bridge": "Ieum"}};
+window.APP_INFO={"name": "이음", "repo": "mini-2026/ieum", "mount": "#verTxt", "notes": [{"v": "current", "d": "2026.11.27", "items": ["👓 글자를 크게 해도 위쪽 버튼이 화면 밖으로 밀리지 않아요", "👆 작은 버튼들을 누르기 쉽게 키웠어요"]}, {"v": "v1.30", "d": "2026.11.26", "items": ["👓 번역 방향(EN → KO) 글자를 더 크게 했어요"]}, {"v": "v1.29", "d": "2026.11.26", "items": ["🛡 내용이 빈 백업 파일은 불러오지 않아요. 지금 기록이 지워지지 않게 막았어요", "✏️ 내 문장을 저장한 뒤에는 '적던 글이 남아 있어요' 알림이 다시 뜨지 않아요", "🔤 'Wi-Fi'처럼 원래 영어인 말은 영어로 적고, 말투를 맞췄어요"]}, {"v": "v1.28", "d": "2026.11.26", "items": ["⬇️ 새 버전을 앱 안에서 바로 받아요. 버전 정보 창에서 '업데이트 받기'를 누르면 받는 정도(%)가 보이고, 다 받으면 설치 화면이 열려요. 받은 파일은 앱을 다시 열 때 저절로 지워져서 폰에 쌓이지 않아요", "🔒 받은 파일이 이음에서 만든 진짜 새 버전인지 확인한 뒤에만 설치해요. 잘 안 되면 '브라우저로 받기'를 눌러 주세요", "💾 백업 파일이 너무 크면(10MB 넘음) 그냥 멈추지 않고 파일 크기와 함께 알려 드려요. 파일을 읽지 못했을 때도 알려 드려요"]}, {"v": "v1.27", "d": "2026.11.26", "items": ["💾 '⭐ 내 문장 쓰기'·'주소 직접 쓰기'에서 글을 적다가 × 를 눌러도 '저장할까요?'라고 물어봐요. 적은 글이 말없이 사라지지 않아요", "🗑 번역된 기록도 하나씩 지울 수 있어요. 기록 아래 '지우기'를 누르면 돼요", "🧹 설정의 '기록 모두 지우기'를 눌러도 ⭐ 즐겨찾기한 기록과 내 문장은 남아요. 잘못 눌렀으면 '되돌리기'로 되살려요", "🔊 사진 번역(보기) 카드에도 '읽어 주기'가 생겨서 번역을 소리로 들려줄 수 있어요", "📷 카메라 권한을 거부했어도 '설정 열기'를 누르면 바로 허용하러 갈 수 있어요", "✍️ 글을 500자 넘게 넣으면 500자까지만 번역한다고 알려 드려요", "👀 좁은 화면에서도 언어 이름(한국어·영어)이 잘리지 않고, 버튼과 글씨를 더 크게 키웠어요", "✏️ 즐겨찾기 안내, 언어 바꾸기 안내, 주문하기 문구('메뉴를 눌러 담아 주세요'), 멈추기 버튼 그림을 알기 쉽게 다듬었어요", "🔒 개인정보 안내에 말소리 인식(Google 음성 인식)과 Google 번역 기능의 익명 사용 통계를 쉽게 적었어요"]}, {"v": "v1.26", "d": "2026.11.25", "items": ["⭐ 내 문장에 이미 있는 문장을 또 적으면 알려 드려요"]}, {"v": "v1.25", "d": "2026.11.20", "items": ["📝 적던 글 지키기: 글을 적다가 앱이 꺼져도 사라지지 않아요. 다시 열어 같은 칸을 열면 적던 글이 그대로 이어져요 (필요 없으면 '버리기'를 눌러 주세요)"]}, {"v": "v1.24", "d": "2026.11.20", "items": ["💾 '저장할까요?' 창에서 '다음부터 묻지 않고 바로 저장'을 누르면, 다음부터는 닫을 때 묻지 않고 저장해요. 저장한 뒤 뜨는 '다시 묻기'를 누르면 다시 물어봐요"]}, {"v": "v1.23", "d": "2026.11.20", "items": ["💾 글을 적던 창을 × 나 뒤로 가기로 닫으면 '저장할까요?'라고 물어봐요. '저장'·'저장 안 함'·'계속 적기' 중에 골라 주세요"]}, {"v": "v1.22", "d": "2026.11.20", "items": ["✋ 글을 적던 창의 바깥을 실수로 눌러도 창이 닫히지 않아요. 적던 내용이 사라지지 않게 '입력한 내용이 있어요'라고 알려 드려요. 닫으려면 × 버튼을 눌러 주세요", "↩️ 기록을 지운 뒤에도 몇 초 동안 '되돌리기'가 나와요. 잘못 지웠으면 눌러서 그대로 되살려요"]}, {"v": "v1.21", "d": "2026.11.18", "items": ["✏️ 문구 다듬기: 주소 고르는 창의 '고르세요'·'누르세요'를 '골라 주세요'·'눌러 주세요'로 부드럽게 바꿨어요"]}, {"v": "v1.20", "d": "2026.11.15", "items": ["✏️ 문구 다듬기: '말하세요'·'시작하세요'를 '말해 주세요'·'시작해요'처럼 부드럽게 바꾸고, 띄어쓰기(읽어 드려요·보여 드려요)를 맞췄어요. 비밀번호·저장 공간 안내를 다른 앱과 같은 말로 맞추고, '내 데이터 백업'을 '내 기록 백업'으로 바꿨어요"]}, {"v": "v1.19", "d": "2026.11.13", "items": ["⭐ '내 문장 쓰기'에서 번역을 못 해도(번역 팩이 없을 때 등) 적은 문장은 그대로 저장돼요. 앱을 다시 열면 알아서 번역해 보고, '번역 다시 시도'를 눌러도 돼요", "🌗 설정에 화면 색(폰 설정 따라·밝게·어둡게)이 생겼어요", "🔒 새로 만드는 백업 비밀번호는 8글자 이상이에요. 숫자만 쓰면 한 번 더 물어봐요. 예전에 만든 6글자 비밀번호 백업도 그대로 열려요", "👆 문장 버튼과 왼쪽 아래 버전 글씨를 손가락으로 누르기 쉽게 키웠어요", "🔤 '안드로이드'처럼 낱말 중간에서 줄이 바뀌지 않게 했어요", "🚀 기록이 많아도 빨리 열리게 최근 60개부터 보여 주고, '이전 기록 더 보기'로 더 볼 수 있어요", "💾 저장하지 못했을 때 안내를 '앱 저장 공간이 가득 차서…'로 알기 쉽게 바꾸고, 다시 실패하면 다시 알려 드려요", "🧭 버튼 이름을 다른 앱과 맞췄어요(예시로 둘러보기·예시 닫기·새 버전이 나왔어요)", "🛡 앱을 만드는 과정(GitHub 빌드)에 쓰는 도구를 정해진 판으로 고정해 더 안전하게 했어요"]}, {"v": "v1.18", "d": "2026.11.13", "items": ["🆘 위급 카드의 긴급 번호를 상대 언어가 아니라 '지금 있는 나라'로 골라요. 서울에서 영어를 골라도 미국 911이 아니라 한국 112·119가 나와요", "🌏 나라는 폰이 알아서 고르고(통신망·시간대), 위급 카드나 설정에서 바꿀 수 있어요. 다른 나라로 옮겨 가면 다시 알아서 골라요. 필리핀·싱가포르·호주·영국·캐나다 등 58개 나라 번호를 넣었어요", "🔒 백업 파일을 비밀번호(6글자 이상)로 잠글 수 있어요. 비밀번호를 아는 사람만 열 수 있어요", "🔠 설정에 글자 크기(보통·크게·아주 크게)가 생겼어요", "🗂 기록을 60개에서 200개까지 남겨요(설정에서 60·200·500개). 기록 찾기에 '공항 택시'처럼 여러 낱말을 쓰면 모두 들어간 기록만 보여요", "⭐ 내 문장 탭에서 '＋ 문장 쓰기'로 할 말을 미리 적어 두면 번역해서 바로 넣어 둬요", "🔢 버전 번호가 왼쪽 아래·설정·정보 창 어디서나 같은 번호로 보여요. 새 버전 확인은 버전 정보 창 한 곳에서 해요", "🛡 보안: 폰 자동 백업에 기록이 섞여 나가지 않게 하고, 바깥으로 여는 주소는 이 앱 GitHub 주소만, 앱 화면의 인터넷 연결은 새 버전 확인만 허락했어요", "👀 위쪽 아이콘 글자와 문장 버튼을 키우고, 위급 카드 빨간색을 더 진하게 해서 잘 보이게 했어요. 옆으로 밀면 더 있는 줄은 오른쪽 끝이 흐려져요", "💾 폰 저장 공간이 부족해서 저장하지 못하면 알려 드려요"]}, {"v": "v1.17", "d": "2026.11.12", "items": ["📦 앱 용량을 절반 가까이 줄였어요: 요즘 폰(64비트)에 맞는 번역 엔진만 넣었어요"]}, {"v": "v1.16", "d": "2026.11.08", "items": ["📖 내장 문장집: 영어·일본어·중국어·베트남어·태국어 문장은 처음부터 인터넷 없이 바로 (식당·호텔·교통·쇼핑·공항·위급)", "🗣️ 한글 발음: 문장집 번역 아래에 '곤니치와'처럼 한글로 읽는 법을 같이 보여 드려요", "⭐ 내 문장: 즐겨찾기한 말이 문장 줄 맨 앞 탭에 모여서 한 번에 다시 말해요", "✈️ Aero에서 다음 여행 나라 받기: 항공권 앱 Aero의 '이음으로 준비' 버튼을 누르면 출발 전에 그 나라 말로 바로 맞춰져요"]}, {"v": "v1.15", "d": "2026.11.05", "items": ["보안 강화: 앱 화면이 허락된 곳 말고는 스크립트를 불러오지 못하게 막고, 폰의 다른 파일을 읽지 못하게 하고, 업데이트 파일은 이 앱 저장소 주소에서만 받아요"]}, {"v": "v1.14", "d": "2026.11.05", "items": ["상황별 문장: 식당·호텔·교통·쇼핑·공항 문장을 눌러서 바로 (한 번 번역하면 다음부터 인터넷 없이 바로)", "해외에 가면 폰 시간대를 보고 상대 언어를 그 나라 말로 바꿀지 한 번 물어봐요"]}, {"v": "v1.13", "d": "2026.11.05", "items": ["크게 보기를 열면 밝은 곳에서도 잘 보이게 화면이 가장 밝아져요 (닫으면 원래대로)", "왼쪽 아래 버전 → 내 기록 백업: 기록을 파일로 저장했다가 새 폰에서 불러오기"]}, {"v": "v1.12", "d": "2026.11.01", "items": ["사진 번역(보기) 카드에도 크게 보기"]}, {"v": "v1.11", "d": "2026.11.01", "items": ["위급 카드가 지금 있는 나라 말로 떠요 (일본이면 일본어). 상대 언어로도 바꿀 수 있어요", "번역 기록에서 찾기, 자주 쓰는 번역은 ☆ 즐겨찾기 (오래돼도 안 지워져요)"]}, {"v": "v1.10", "d": "2026.11.01", "items": ["왼쪽 아래 버전을 누르면 앱 정보·업데이트 내용·개인정보를 볼 수 있어요", "새 버전이 나오면 버전 글씨가 노란색으로 바뀌어요"]}, {"v": "v1.8", "d": "2026.11.01", "items": ["첫 앱 버전: 듣기·말하기·보기와 새 기능 7가지", "처음 열면 빈 화면에서 시작 (예시는 '예시로 둘러보기'에서만)", "번역·글자 읽기를 폰 안에서, 번역 팩을 한 번 받으면 인터넷 없이도 번역", "카메라로 비추면 글자 위에 번역이 겹쳐 보여요", "환율을 하루 한 번 받고, 지금 있는 나라 통화·긴급 번호를 자동으로", "홈 화면 위젯"]}], "privacy": "번역한 글·사진·기록은 이 폰에만 저장돼요(폰 자동 백업에도 넣지 않아요). 글 번역과 사진 글자 읽기는 폰 안에서 해요. 말소리를 글로 바꾸는 건 폰에 있는 Google 음성 인식을 써서, 인터넷이 켜져 있으면 말소리가 Google로 갈 수 있어요. Google 번역 기능은 어떤 기능을 얼마나 썼는지 같은 익명 사용 통계를 Google에 보내요. 그 밖에 인터넷은 번역 팩·글자 읽기 기능 받기(Google), 환율 받기(open.er-api.com), 새 버전 확인·받기(GitHub)에만 써요.", "backup": {"keys": ["ieum.*"], "bridge": "Ieum"}};
 window.APP_INFO.online=!!window.Ieum;
 window.APP_INFO.version=function(){return window.IEUM_VER()};
 </script>
