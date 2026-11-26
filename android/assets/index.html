@@ -86,17 +86,20 @@ p{margin:0}
 .logo svg{display:block}
 .brand h1{margin:0;font-size:20px;line-height:1;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
 .tools{display:flex;gap:2px;flex:none}
-.tool{width:44px;height:46px;display:grid;justify-items:center;align-content:center;gap:3px;border-radius:var(--r);color:var(--on-board)}
+.tool{min-width:48px;height:48px;padding:0 1px;display:grid;justify-items:center;align-content:center;gap:3px;border-radius:var(--r);color:var(--on-board)}
 .tool .i{width:20px;height:20px}
-.tool span{font-size:12px;line-height:1;color:var(--board-muted);white-space:nowrap;letter-spacing:-.02em}
+.tool span{font-size:14px;line-height:1;color:var(--board-muted);white-space:nowrap;letter-spacing:-.02em}
 .tool.sos b{font-family:var(--f-sign);font-weight:700;font-size:16px;line-height:20px;letter-spacing:.04em;color:var(--sos-ink)}
-.langs{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);align-items:center;gap:6px}
-.plate{display:flex;align-items:center;gap:8px;min-width:0;height:46px;padding:0 10px;border-radius:var(--r);border:1px solid var(--board-line);text-align:left}
-.who{font-size:12px;color:var(--board-muted);flex:none}
+.langs{display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);align-items:center;gap:6px}
+.plate{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;column-gap:8px;min-width:0;min-height:48px;padding:2px 10px;border-radius:var(--r);border:1px solid var(--board-line);text-align:left}
+.who{font-size:14px;line-height:1.15;color:var(--board-muted);grid-column:2;grid-row:1}
+.plate .code{grid-column:1;grid-row:1/3}.plate .chev{grid-column:3;grid-row:1/3}.plate .nm{grid-column:2;grid-row:2;line-height:1.2}
+@media (max-width:380px){.plate{padding:2px 8px;column-gap:6px}.plate .nm{font-size:14px}.tool span{letter-spacing:-.05em}}
+@media (max-width:340px){.plate .chev{display:none}.tool span{font-size:13px}.brand h1{font-size:18px}}
 .code{font-family:var(--f-sign);font-weight:700;font-size:24px;line-height:1;color:var(--sign);letter-spacing:.02em;flex:none}
 .nm{font-weight:500;min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .plate .chev{width:16px;height:16px;color:var(--board-muted)}
-.arrows{width:36px;height:46px;border-radius:var(--r);color:var(--sign);display:grid;place-items:center}
+.arrows{width:48px;height:48px;border-radius:var(--r);color:var(--sign);display:grid;place-items:center}
 .arrows .i{width:22px;height:22px;transition:transform .3s ease}
 .arrows.spin .i{transform:rotate(180deg)}
 @media (hover:hover){.arrows:hover{background:var(--board-hover)}}
@@ -109,7 +112,7 @@ p{margin:0}
 .empty b{color:var(--ink);font-size:17px}
 .empty .act-b{margin-top:6px;border:1px solid var(--line);border-radius:6px;padding:0 14px}
 .list{display:flex;flex-direction:column;gap:10px}
-.note{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px dashed var(--line);border-radius:var(--r);font-size:13px;color:var(--muted)}
+.note{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px dashed var(--line);border-radius:var(--r);font-size:14px;color:var(--muted)}
 .note .i{width:18px;height:18px;margin-top:1px}
 .note p{flex:1;min-width:0}
 .note button{flex:none;min-height:44px;font-size:13px;font-weight:700;color:var(--ink);padding:2px 8px;margin:-10px -4px -10px 0}
@@ -139,7 +142,7 @@ p{margin:0}
 .ffind-star[aria-pressed="true"] svg,.act-b.on svg{fill:currentColor}
 .act-b.on{font-weight:700}
 .fnone{padding:24px 8px;text-align:center;font-size:14px;opacity:.75}
-.act-b{display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 8px;border-radius:4px;font-size:13px;font-weight:500}
+.act-b{display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 8px;border-radius:4px;font-size:14px;font-weight:500}
 .act-b .i{width:18px;height:18px}
 .act-b em{font-style:normal;font-family:var(--f-sign);font-weight:700;background:var(--sign);color:var(--on-sign);border-radius:3px;padding:0 5px;line-height:18px}
 .kick{font-size:11px;font-weight:700;color:var(--board-muted);margin-top:6px}
@@ -174,13 +177,13 @@ p{margin:0}
 .phrases{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
 .phrases::-webkit-scrollbar{display:none}
 .sits{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-bottom:6px}.sits::-webkit-scrollbar{display:none}
-.sits button{flex:none;height:44px;padding:0 12px;border:0;border-radius:18px;background:transparent;color:var(--ink-2,inherit);font:inherit;font-size:12.5px;font-weight:600}
+.sits button{flex:none;height:48px;padding:0 12px;border:0;border-radius:24px;background:transparent;color:var(--ink-2,inherit);font:inherit;font-size:14px;font-weight:600}
 .sits button[aria-selected="true"]{background:var(--ink,#111);color:var(--surface,#fff)}
 .tzsug{display:flex;align-items:center;gap:8px;padding:8px 10px;margin-bottom:8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);font-size:13px}
 .tzsug span{flex:1;min-width:0}.tzx{flex:none;width:44px;height:44px;border:0;background:transparent;color:inherit;display:grid;place-items:center}
 .pron{margin:2px 0 0;font-size:14px;color:var(--muted,#667);display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}.pron span{font-size:11px;padding:1px 6px;border-radius:4px;border:1px solid var(--line)}
-.chip-hint{font-size:13px;color:var(--muted,#667);white-space:normal;padding:6px 2px}
-.chip{flex:none;height:44px;padding:0 11px;border:1px solid var(--line);border-radius:4px;background:var(--surface);font-size:13px;font-weight:500;white-space:nowrap}
+.chip-hint{font-size:14px;color:var(--muted,#667);white-space:normal;padding:6px 2px}
+.chip{flex:none;height:48px;padding:0 11px;border:1px solid var(--line);border-radius:4px;background:var(--surface);font-size:14px;font-weight:500;white-space:nowrap}
 .compose{display:flex;gap:6px;margin:0}
 .field{flex:1;min-width:0;display:flex;align-items:center;gap:6px;height:44px;padding:0 4px 0 12px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .field:focus-within{border-color:var(--ink)}
@@ -191,7 +194,7 @@ p{margin:0}
 .mode-chip.listen{background:var(--board);color:var(--on-board)}
 .mode-chip button{width:24px;height:24px;display:grid;place-items:center}
 .mode-chip .i{width:14px;height:14px}
-.send{flex:none;width:44px;height:44px;border-radius:var(--r);background:var(--board);color:var(--sign);display:grid;place-items:center}
+.send{flex:none;width:48px;height:48px;border-radius:var(--r);background:var(--board);color:var(--sign);display:grid;place-items:center}
 .send:disabled{opacity:.35}
 .signs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .sign{position:relative;min-height:76px;padding:8px 4px 9px;border-radius:8px;background:var(--sign);color:var(--on-sign);display:grid;justify-items:center;align-content:center;gap:3px;transition:transform .12s ease}
@@ -202,8 +205,8 @@ p{margin:0}
 .sign.rec{background:var(--rec);color:var(--on-rec)}
 .sign.rec::after{content:"";position:absolute;inset:-4px;border:2px solid var(--rec);border-radius:11px;animation:ring 1.3s ease-out infinite;pointer-events:none}
 @keyframes ring{from{opacity:.9;transform:scale(.98)}to{opacity:0;transform:scale(1.06)}}
-.foot{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:44px;margin:-8px 0 -4px;font-size:11px;color:var(--muted)}
-.ver{position:relative;display:inline-flex;align-items:center;min-width:56px;height:44px;font-family:var(--f-sign);font-weight:600;font-size:12px;letter-spacing:.05em;color:var(--muted);padding:0 12px 0 0;margin:0;border:0;background:transparent}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:48px;margin:-8px 0 -4px;font-size:14px;color:var(--muted)}
+.ver{position:relative;display:inline-flex;align-items:center;min-width:56px;height:48px;font-family:var(--f-sign);font-weight:600;font-size:14px;letter-spacing:.05em;color:var(--muted);padding:0 12px 0 0;margin:0;border:0;background:transparent}
 .phrases.more,.sits.more{-webkit-mask-image:linear-gradient(to right,#000 82%,transparent);mask-image:linear-gradient(to right,#000 82%,transparent)}
 .row.stack{flex-wrap:wrap}.row.stack .row-t{flex:1 1 100%}.row.stack .seg{width:100%}.row.stack .seg button{flex:1}
 .seg{flex:none;display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
@@ -421,7 +424,7 @@ p{margin:0}
       <form class="compose" id="compose" autocomplete="off">
         <div class="field">
           <span class="mode-chip" id="modeChip" hidden><span id="modeLabel"></span><button type="button" id="modeX" aria-label="입력 방식 되돌리기"><svg class="i" data-ic="close"></svg></button></span>
-          <input id="txt" type="text" maxlength="500" enterkeyhint="send" placeholder="글로 써도 돼요 · 언어는 알아서 맞춰요" aria-label="번역할 글">
+          <input id="txt" type="text" data-max="500" enterkeyhint="send" placeholder="글로 써도 돼요 · 언어는 알아서 맞춰요" aria-label="번역할 글">
         </div>
         <button class="send" id="sendBtn" type="submit" aria-label="번역하기" disabled><svg class="i" data-ic="send"></svg></button>
       </form>
@@ -441,7 +444,7 @@ p{margin:0}
       <p class="fh-lang" id="fThemLang">EN</p>
       <p class="fh-text" id="fThemText"></p>
       <p class="fh-sub" id="fThemSub"></p>
-      <form class="fh-form" id="fThemForm" autocomplete="off"><input id="fThemInput" type="text" maxlength="500" enterkeyhint="send" aria-label="상대가 쓰는 칸"><button type="submit" aria-label="보내기"><svg class="i" data-ic="send"></svg></button></form>
+      <form class="fh-form" id="fThemForm" autocomplete="off"><input id="fThemInput" type="text" data-max="500" enterkeyhint="send" aria-label="상대가 쓰는 칸"><button type="submit" aria-label="보내기"><svg class="i" data-ic="send"></svg></button></form>
       <button class="fh-mic" id="fThemMic" type="button"><svg class="i" data-ic="mic"></svg><span id="fThemMicLabel"></span></button>
     </div>
   </section>
@@ -456,7 +459,7 @@ p{margin:0}
       <p class="fh-text" id="fMeText"></p>
       <p class="fh-sub" id="fMeSub"></p>
       <div class="fh-replies" id="fMeReplies"></div>
-      <form class="fh-form" id="fMeForm" autocomplete="off"><input id="fMeInput" type="text" maxlength="500" enterkeyhint="send" aria-label="내가 쓰는 칸"><button type="submit" aria-label="보내기"><svg class="i" data-ic="send"></svg></button></form>
+      <form class="fh-form" id="fMeForm" autocomplete="off"><input id="fMeInput" type="text" data-max="500" enterkeyhint="send" aria-label="내가 쓰는 칸"><button type="submit" aria-label="보내기"><svg class="i" data-ic="send"></svg></button></form>
       <button class="fh-mic" id="fMeMic" type="button"><svg class="i" data-ic="mic"></svg><span>눌러서 말하기</span></button>
     </div>
   </section>
@@ -747,6 +750,8 @@ p{margin:0}
     pin: '<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/>',
     edit: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',
     close: '<path d="M6 6l12 12M18 6L6 18"/>',
+    pause: '<path d="M9 5.5v13M15 5.5v13"/>',
+    play: '<path d="M8 5.5v13l10.5-6.5z"/>',
     rotate: '<path d="M4.5 12a7.5 7.5 0 0 1 12.9-5.2M19 3.6v3.6h-3.6M19.5 12a7.5 7.5 0 0 1-12.9 5.2M5 20.4v-3.6h3.6"/>',
     retry: '<path d="M19.6 14.5A8 8 0 1 1 17.7 6.3L20 8.6"/><path d="M20 3.8v4.8h-4.8"/>',
     trash: '<path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/>',
@@ -801,12 +806,12 @@ p{margin:0}
   const fileCam = $('#fileCam'), fileAlbum = $('#fileAlbum');
 
   let toastT = 0;
-  function toast(msg, ms, undo) {
+  function toast(msg, ms, undo, label) {
     toastEl.textContent = msg;
     toastEl.classList.toggle('has-act', !!undo);
     if (undo) {
       const b = document.createElement('button');
-      b.type = 'button'; b.textContent = '되돌리기';
+      b.type = 'button'; b.textContent = label || '되돌리기';
       b.addEventListener('click', (e) => { e.stopPropagation(); toastEl.hidden = true; undo(); });
       toastEl.append(' ', b);
     }
@@ -1027,7 +1032,7 @@ p{margin:0}
     c.append(h('div', { class: 'acts' },
       btn('speaker', '읽어 주기', () => speak(it.trans, it.dst, key), { 'data-say': key }),
       btn('expand', '크게 보기', () => openBig(it.trans, it.orig, it.dst, it.src)),
-      btn('copy', '복사', () => copyText(it.trans)), starBtn(it, ex)));
+      btn('copy', '복사', () => copyText(it.trans)), starBtn(it, ex), ex ? null : btn('trash', '지우기', () => removeItem(it))));
     if (it.kind === 'listen' && it === lastListen() && S.me === 'ko') {
       c.append(h('p', { class: 'kick' }, '바로 대답'),
         h('div', { class: 'replies' }, REPLY_LABELS.map((lab, i) => h('button', { class: 'rchip', type: 'button', onclick: () => reply(i) }, lab))));
@@ -1068,6 +1073,7 @@ p{margin:0}
     c.append(h('div', { class: 'acts' },
       priced ? h('button', { class: 'act-b', type: 'button', onclick: () => orderSheet(it) }, ic('receipt'), h('span', null, '주문하기'), n ? h('em', null, String(n)) : null) : null,
       overlay ? btn('layers', '사진 위에', () => openLens(it)) : null,
+      btn('speaker', '읽어 주기', () => speak(it.lines.map((l) => l.t).join('\n'), it.dst || S.me, base + '-t'), { 'data-say': base + '-t', 'aria-label': '번역 읽어 주기' }),
       btn('expand', '크게 보기', () => openBig(it.lines.map((l) => l.t).join('\n'), it.lines.map((l) => l.o).join('\n'), it.dst || S.me, it.src)),
       btn('copy', '복사', () => copyText(it.lines.map((l) => l.o + '\n' + l.t).join('\n\n'))), starBtn(it, ex)));
     return c;
@@ -1080,7 +1086,7 @@ p{margin:0}
   let fQ = '', fOnlyStar = false;
   function starBtn(it, ex) {
     if (ex) return null;
-    const b = btn('star', it.star ? '즐겨찾기 됨' : '즐겨찾기', () => { it.star = !it.star; save(); renderFeed(); if (SITS[sitI][1] === 'star') renderSits(); toast(it.star ? '즐겨찾기에 넣었어요. 오래돼도 지워지지 않아요.' : '즐겨찾기에서 뺐어요.'); }, { 'aria-pressed': String(!!it.star) });
+    const b = btn('star', it.star ? '즐겨찾기 됨' : '즐겨찾기', () => { it.star = !it.star; save(); renderFeed(); if (SITS[sitI][1] === 'star') renderSits(); toast(!it.star ? '즐겨찾기에서 뺐어요.' : it.kind === 'speak' && it.src === S.me ? '즐겨찾기에 넣었어요. ⭐ 내 문장에도 모여요.' : '즐겨찾기에 넣었어요. 기록 찾기의 ⭐ 즐겨찾기에서 볼 수 있어요.', 3600); }, { 'aria-pressed': String(!!it.star) });
     if (it.star) b.classList.add('on');
     return b;
   }
@@ -1102,7 +1108,7 @@ p{margin:0}
       const from = Math.max(0, shown.length - feedLimit);
       if (from > 0) frag.append(h('button', { class: 'more-b', type: 'button', onclick: moreFeed }, '이전 기록 ' + Math.min(FEED_STEP, from) + '개 더 보기 (' + from + '개 남음)'));
       for (let i = from; i < shown.length; i++) frag.append(cardNode(shown[i], false));
-      if (!shown.length) frag.append(h('p', { class: 'fnone' }, fOnlyStar && !q ? '즐겨찾기한 기록이 없어요. 기록 아래 ☆를 눌러 보세요.' : '찾는 기록이 없어요. 띄어 쓴 낱말이 모두 들어간 기록만 보여 줘요.'));
+      if (!shown.length) frag.append(h('p', { class: 'fnone' }, fOnlyStar && !q ? '즐겨찾기한 기록이 없어요. 기록 아래 ⭐ 즐겨찾기를 눌러 보세요.' : '찾는 기록이 없어요. 띄어 쓴 낱말이 모두 들어간 기록만 보여 줘요.'));
       else if (words.length || fOnlyStar) frag.prepend(h('p', { class: 'fnone', role: 'status' }, '기록 ' + shown.length + '개를 찾았어요'));
     }
     else if (showEx) {
@@ -1139,8 +1145,8 @@ p{margin:0}
   function removeItem(it) {
     const i = S.items.indexOf(it);
     if (i >= 0) S.items.splice(i, 1);
-    blobs.delete(it.id);
     const blob = blobs.get(it.id);
+    blobs.delete(it.id);
     if (fullURL.has(it.id)) { try { URL.revokeObjectURL(fullURL.get(it.id)); } catch (e) { /* ignore */ } fullURL.delete(it.id); }
     renderFeed();
     save();
@@ -1239,7 +1245,7 @@ p{margin:0}
         ? h('button', { class: 'chip wait', type: 'button', 'aria-label': x.orig + ', 아직 번역 전이에요. 누르면 번역해요', onclick: () => retryMine(x) }, '⏳ ' + x.orig)
         : h('button', { class: 'chip', type: 'button', onclick: () => {
           const it = addItem({ kind: 'speak', src: x.src, dst: x.dst, orig: x.orig, trans: '', status: 'pending' }); finish(it, x.trans); } }, x.orig))
-        : [h('span', { class: 'chip-hint' }, `미리 적어 두거나, ${nameKo(S.them)} 기록 아래 ☆를 누르면 여기 모여요`)]));
+        : [h('span', { class: 'chip-hint' }, `미리 적어 두거나, ${nameKo(S.them)} 말하기 기록 아래 ⭐ 즐겨찾기를 누르면 여기 모여요`)]));
       $('#phrases').scrollLeft = 0; moreHint(); return;
     }
     $('#phrases').replaceChildren(...(list ? list.map((t) => h('button', { class: 'chip', type: 'button', onclick: () => sitPhrase(t) }, t))
@@ -1253,7 +1259,7 @@ p{margin:0}
   /* ⭐ 내 문장: 미리 적어 두기 (번역해서 즐겨찾기에 바로 넣음) */
   function addMine() {
     const inp = h('input', { type: 'text', maxlength: '200', enterkeyhint: 'done', placeholder: '예: 땅콩 알레르기가 있어요', 'aria-label': '내 문장' });
-    const ok = h('button', { class: 'set-btn', type: 'submit' }, '번역해서 넣기');
+    const ok = h('button', { class: 'set-btn', type: 'submit', 'data-save': '' }, '번역해서 넣기');
     const f = h('form', { class: 'form' }, h('label', null, nameKo(S.me) + '로 적어 주세요'), inp,
       h('p', { class: 'sheet-note' }, nameKo(S.them) + '로 번역해서 ⭐ 내 문장에 넣어 둬요. 다음부터 한 번 눌러 바로 말해요.'), ok);
     f.addEventListener('submit', (e) => {
@@ -1541,7 +1547,12 @@ p{margin:0}
     if (!photoReady()) return;
     nativeCall('photo', [camera ? 'camera' : 'album', scriptFor()]).then((res) => {
       if (purpose.kind === 'addr') chooseAddress(res); else photoItem(res, purpose);
-    }, (e) => { if (e.code !== 'cancelled') toast(e.message || '사진을 열지 못했어요.', 4200); });
+    }, (e) => { if (e.code === 'cancelled') return; if (/권한/.test(e.message || '')) permToast(e.message); else toast(e.message || '사진을 열지 못했어요.', 4200); });
+  }
+  /* 권한을 '다시 묻지 않음'으로 거부했으면 폰이 더 묻지 않으니, 앱 정보 화면을 바로 열어 줘요 */
+  function permToast(msg) {
+    if (NB && typeof NB.appSettings === 'function') toast(msg + " '설정 열기' → 권한 → 카메라에서 허용해 주세요.", 8000, () => { try { NB.appSettings(); } catch (e) { /* 무시 */ } }, '설정 열기');
+    else toast(msg, 4200);
   }
   async function samplePhoto(mode) {
     try { if (document.fonts) await Promise.race([document.fonts.load('600 48px "Roboto Condensed"'), new Promise((r) => setTimeout(r, 800))]); } catch (e) { /* fallback font */ }
@@ -1616,7 +1627,7 @@ p{margin:0}
   }
   async function openLive() {
     if (!photoReady()) return;
-    try { await nativeCall('camPerm', []); } catch (e) { toast('카메라로 비추려면 카메라 권한을 허용해 주세요.', 4200); return; }
+    try { await nativeCall('camPerm', []); } catch (e) { permToast('카메라로 비추려면 카메라 권한을 허용해 주세요.'); return; }
     let stream;
     try {
       stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 }, height: { ideal: 960 } }, audio: false });
@@ -1634,12 +1645,13 @@ p{margin:0}
     lensVideo.onloadedmetadata = fitLens;
     $('#lensTitle').textContent = '카메라로 비추기';
     $('#lensNote').textContent = '글자에 카메라를 대고 잠깐 멈추면 번역이 겹쳐 보여요. 번역을 누르면 원문을 읽어 드려요.';
-    const pause = h('button', { class: 'lens-b', type: 'button' }, ic('rotate'), h('span', null, '멈추기'));
+    const pause = h('button', { class: 'lens-b', type: 'button' }, ic('pause'), h('span', null, '멈추기'));
     pause.addEventListener('click', () => {
       if (!live) return;
       live.paused = !live.paused;
       if (live.paused) lensVideo.pause(); else lensVideo.play().catch(() => {});
       pause.querySelector('span').textContent = live.paused ? '계속 비추기' : '멈추기';
+      pause.querySelector('svg').replaceWith(ic(live.paused ? 'play' : 'pause'));
     });
     const keep = h('button', { class: 'lens-b main', type: 'button' }, ic('list'), h('span', null, '이 화면 저장'));
     keep.addEventListener('click', () => {
@@ -1721,7 +1733,7 @@ p{margin:0}
         qtyEls[i].q.textContent = String(q);
         qtyEls[i].row.classList.toggle('on', q > 0);
       }
-      totalEl.replaceChildren(count ? '합계 ' + money(total, it.cur) + ' ' : '먹을 것을 눌러 담아 주세요', count && krw(total, it.cur) ? h('small', null, krw(total, it.cur)) : null);
+      totalEl.replaceChildren(count ? '합계 ' + money(total, it.cur) + ' ' : '메뉴를 눌러 담아 주세요', count && krw(total, it.cur) ? h('small', null, krw(total, it.cur)) : null);
       showBtn.disabled = !count;
       updateItem(it);
     };
@@ -1739,7 +1751,7 @@ p{margin:0}
     }
     clearBtn.addEventListener('click', () => { it.order = {}; refresh(); });
     showBtn.addEventListener('click', () => { closeSheet(); showOrder(it); });
-    openSheet('주문하기', h('div', null, h('p', { class: 'sheet-note' }, '먹을 것을 누를 때마다 하나씩 담겨요.'), list,
+    openSheet('주문하기', h('div', null, h('p', { class: 'sheet-note' }, '메뉴를 누를 때마다 하나씩 담겨요.'), list,
       h('div', { class: 'o-foot' }, totalEl, h('div', { class: 'o-btns' }, clearBtn, showBtn))));
     refresh();
   }
@@ -1836,7 +1848,7 @@ p{margin:0}
     const f = h('form', { class: 'form' },
       h('label', { for: 'aName' }, '숙소 이름 (없어도 돼요)'), name,
       h('label', { for: 'aAddr' }, '주소'), addr,
-      h('button', { class: 'save', type: 'submit' }, '저장하고 보여 주기'));
+      h('button', { class: 'save', type: 'submit', 'data-save': '' }, '저장하고 보여 주기'));
     f.addEventListener('submit', (e) => {
       e.preventDefault();
       const a = addr.value.trim();
@@ -2085,10 +2097,20 @@ function askLeave(box, doClose) {
     var cands = [];
   Array.prototype.forEach.call(box.querySelectorAll('button'), function (b) {
     var t = (b.textContent || '').replace(/\s+/g, ' ').trim();
-    if (!b.disabled && b.offsetWidth >= box.offsetWidth * 0.4 && /^(저장|저장하기|등록|등록하기|추가|추가하기|넣기|만들기|고치기)$/.test(t)) cands.push(b); // 아래쪽 큰 버튼만
+    if (!b.disabled && (b.hasAttribute('data-save') || b.offsetWidth >= box.offsetWidth * 0.4 && t.length <= 14 && /(저장|등록|추가|넣기|만들기|고치기)/.test(t))) cands.push(b); // 아래쪽 큰 저장 버튼 ('번역해서 넣기'처럼 앞에 말이 붙어도 찾아요)
   });
+  var marked = cands.filter(function (b) { return b.hasAttribute('data-save'); }); if (marked.length === 1) cands = marked;
   var save = cands.length === 1 ? cands[0] : null; // 큰 저장 버튼이 딱 하나일 때만 (헷갈리면 묻지 않고 닫아요)
-  if (!save) { doClose(); return; } // 저장 버튼이 없는 창(설정 등)은 바로 저장되니 묻지 않아요
+  if (!save) { // 저장 버튼이 없는 창(설정 등)은 바로 저장되니 묻지 않아요. 다만 적은 글이 남아 있으면 버릴지 한 번 물어요
+    var typed = Array.prototype.some.call(box.querySelectorAll('textarea, input[type=text]'), function (el) { return el.offsetWidth && el.value.trim(); });
+    if (!typed) { doClose(); return; }
+    var w0 = document.createElement('div'); w0.className = 'leave-ask'; w0.setAttribute('role', 'alertdialog');
+    var p0 = document.createElement('p'); p0.textContent = '적은 내용이 저장되지 않아요. 닫을까요?'; w0.appendChild(p0);
+    var r0 = document.createElement('div'); r0.className = 'leave-row'; w0.appendChild(r0);
+    [['계속 적기', 'la-keep', function () {}], ['저장 안 하고 닫기', 'la-drop', doClose]].forEach(function (a) { var b = document.createElement('button'); b.type = 'button'; b.textContent = a[0]; b.className = a[1]; b.onclick = function (e) { e.stopPropagation(); w0.remove(); a[2](); }; r0.appendChild(b); });
+    box.appendChild(w0); try { w0.scrollIntoView({ block: 'end' }); r0.firstChild.focus({ preventScroll: true }); } catch (e) { /* 무시 */ }
+    return;
+  }
   var auto = false; try { auto = localStorage.getItem('leave-auto-save') === '1'; } catch (e) { /* 무시 */ }
   if (auto) { save.click(); leaveNote(box); return; } // '다음부터 묻지 않고 저장'을 고른 경우
   var w = document.createElement('div'); w.className = 'leave-ask'; w.setAttribute('role', 'alertdialog');
@@ -2149,7 +2171,7 @@ function askLeave(box, doClose) {
     openSheet('보기 · 사진 속 글자 번역', h('div', null,
       opt('layers', '카메라로 비추기', '비추는 동안 글자 위에 번역이 겹쳐 보여요', () => { closeSheet(); openLive(); }),
       opt('camera', '사진 찍어서 번역', '한 장 찍고 천천히 보기', () => { closeSheet(); pickPhoto({ kind: 'see', mode: 'lens' }, true); }),
-      opt('receipt', '메뉴판 찍고 주문하기', '먹을 것만 누르면 주문 문장을 만들어요', () => { closeSheet(); pickPhoto({ kind: 'see', mode: 'order' }, true); }),
+      opt('receipt', '메뉴판 찍고 주문하기', '메뉴만 누르면 주문 문장을 만들어요', () => { closeSheet(); pickPhoto({ kind: 'see', mode: 'order' }, true); }),
       opt('album', '앨범에서 가져오기', '찍어 둔 사진이나 화면 캡처', () => { closeSheet(); pickPhoto({ kind: 'see', mode: 'list' }, false); }),
       opt('menu', '예시 메뉴판으로 해보기', '영어 카페 메뉴판으로 바로 확인', () => { closeSheet(); samplePhoto('lens'); })));
   }
@@ -2170,8 +2192,13 @@ function askLeave(box, doClose) {
         return;
       }
       clearTimeout(armT);
-      for (const u of fullURL.values()) { try { URL.revokeObjectURL(u); } catch (e) { /* ignore */ } }
-      S.items = []; blobs.clear(); fullURL.clear(); save(); renderFeed(); closeSheet(); toast('기록을 지웠어요.');
+      const before = S.items.slice(), kept = before.filter((x) => x.star), gone = before.filter((x) => !x.star);
+      if (!gone.length) { armed = false; clear.textContent = '기록 모두 지우기'; toast('⭐ 즐겨찾기한 기록만 있어서 지울 기록이 없어요.'); return; }
+      const oldBlobs = new Map(blobs);
+      for (const x of gone) blobs.delete(x.id);
+      S.items = kept; save(); renderFeed(); renderSits(); closeSheet();
+      toast(kept.length ? '기록을 지웠어요. ⭐ 즐겨찾기한 기록과 내 문장은 남겼어요.' : '기록을 지웠어요.', 0, () => {
+        S.items = before.filter((x) => !S.items.includes(x)).concat(S.items); for (const [k, v] of oldBlobs) if (!blobs.has(k)) blobs.set(k, v); save(); renderFeed(); renderSits(); });
     });
     const seg = (opts, cur, fn, label) => {
       const box = h('div', { class: 'seg', role: 'group', 'aria-label': label });
@@ -2186,7 +2213,7 @@ function askLeave(box, doClose) {
       row('천천히 읽기', '외국 사람이 알아듣기 쉽게 느리게 읽어요', sw(S.slow, (v) => { S.slow = v; store.set('slow', v); }, '천천히 읽기')),
       row('글자 크기', '부모님과 같이 쓸 때 크게', seg([[1, '보통'], [1.15, '크게'], [1.3, '아주 크게']], S.font, (v) => { S.font = v; store.set('font', v); applyFont(); }, '글자 크기')),
       row('화면 색', '어두운 곳에서는 어둡게가 눈이 편해요', seg([['auto', '폰 설정 따라'], ['light', '밝게'], ['dark', '어둡게']], S.theme, (v) => { S.theme = v; store.set('theme', v); applyTheme(); }, '화면 색')),
-      row('기록 보관 개수', '즐겨찾기(☆)한 기록은 개수와 상관없이 남아요', seg([[60, '60개'], [200, '200개'], [500, '500개']], S.keep, (v) => { S.keep = v; store.set('keep', v); save(); }, '기록 보관 개수')),
+      row('기록 보관 개수', '⭐ 즐겨찾기한 기록은 개수와 상관없이 남아요', seg([[60, '60개'], [200, '200개'], [500, '500개']], S.keep, (v) => { S.keep = v; store.set('keep', v); save(); }, '기록 보관 개수')),
       row('위급 카드 나라', '긴급 번호는 지금 있는 나라를 따라요', scBtn),
       row('버전 · 새 버전 확인', '지금 ' + VER + ' · 업데이트 내용과 백업도 여기서 봐요', verBtn),
       h('div', { class: 'set-block' }, h('b', null, '홈 화면 위젯'),
@@ -2241,13 +2268,18 @@ function askLeave(box, doClose) {
   document.addEventListener('visibilitychange', () => { if (!document.hidden) tzSuggest(); });
   $('#meBtn').addEventListener('click', () => langSheet('me'));
   $('#themBtn').addEventListener('click', () => langSheet('them'));
+  /* 긴 글은 500자까지만 번역해요 (말없이 잘리지 않게 알려 드려요) */
+  document.querySelectorAll('input[data-max]').forEach((el) => el.addEventListener('input', () => {
+    const max = +el.dataset.max; if (el.value.length <= max) return;
+    el.value = el.value.slice(0, max); toast('한 번에 ' + max + '자까지만 번역해요. 나머지는 나눠서 넣어 주세요.', 4200);
+  }));
   $('#swapBtn').addEventListener('click', () => {
     stopRec();
     const t = S.me; S.me = S.them; S.them = t;
     store.set('me', S.me); store.set('them', S.them);
     $('#swapBtn').classList.toggle('spin');
     renderLangs(); renderFeed(); prepareModels();
-    toast('나 ' + nameKo(S.me) + ' ⇄ 상대 ' + nameKo(S.them), 1600);
+    toast('나 ' + nameKo(S.me) + ' ⇄ 상대 ' + nameKo(S.them) + (S.me !== 'ko' ? '. 나를 한국어로 다시 바꾸면 문장 줄이 다시 나와요' : ''), S.me !== 'ko' ? 3600 : 1600);
   });
   $('#btnSet').addEventListener('click', settingsSheet);
   $('#tFace').addEventListener('click', openFace);
@@ -2309,7 +2341,7 @@ function askLeave(box, doClose) {
 
 
 <!--APPINFO--><script>
-window.APP_INFO={"name": "이음", "repo": "mini-2026/ieum", "mount": "#verTxt", "notes": [{"v": "current", "d": "2026.11.25", "items": ["⭐ 내 문장에 이미 있는 문장을 또 적으면 알려 드려요"]}, {"v": "v1.25", "d": "2026.11.20", "items": ["📝 적던 글 지키기: 글을 적다가 앱이 꺼져도 사라지지 않아요. 다시 열어 같은 칸을 열면 적던 글이 그대로 이어져요 (필요 없으면 '버리기'를 눌러 주세요)"]}, {"v": "v1.24", "d": "2026.11.20", "items": ["💾 '저장할까요?' 창에서 '다음부터 묻지 않고 바로 저장'을 누르면, 다음부터는 닫을 때 묻지 않고 저장해요. 저장한 뒤 뜨는 '다시 묻기'를 누르면 다시 물어봐요"]}, {"v": "v1.23", "d": "2026.11.20", "items": ["💾 글을 적던 창을 × 나 뒤로 가기로 닫으면 '저장할까요?'라고 물어봐요. '저장'·'저장 안 함'·'계속 적기' 중에 골라 주세요"]}, {"v": "v1.22", "d": "2026.11.20", "items": ["✋ 글을 적던 창의 바깥을 실수로 눌러도 창이 닫히지 않아요. 적던 내용이 사라지지 않게 '입력한 내용이 있어요'라고 알려 드려요. 닫으려면 × 버튼을 눌러 주세요", "↩️ 기록을 지운 뒤에도 몇 초 동안 '되돌리기'가 나와요. 잘못 지웠으면 눌러서 그대로 되살려요"]}, {"v": "v1.21", "d": "2026.11.18", "items": ["✏️ 문구 다듬기: 주소 고르는 창의 '고르세요'·'누르세요'를 '골라 주세요'·'눌러 주세요'로 부드럽게 바꿨어요"]}, {"v": "v1.20", "d": "2026.11.15", "items": ["✏️ 문구 다듬기: '말하세요'·'시작하세요'를 '말해 주세요'·'시작해요'처럼 부드럽게 바꾸고, 띄어쓰기(읽어 드려요·보여 드려요)를 맞췄어요. 비밀번호·저장 공간 안내를 다른 앱과 같은 말로 맞추고, '내 데이터 백업'을 '내 기록 백업'으로 바꿨어요"]}, {"v": "v1.19", "d": "2026.11.13", "items": ["⭐ '내 문장 쓰기'에서 번역을 못 해도(번역 팩이 없을 때 등) 적은 문장은 그대로 저장돼요. 앱을 다시 열면 알아서 번역해 보고, '번역 다시 시도'를 눌러도 돼요", "🌗 설정에 화면 색(폰 설정 따라·밝게·어둡게)이 생겼어요", "🔒 새로 만드는 백업 비밀번호는 8글자 이상이에요. 숫자만 쓰면 한 번 더 물어봐요. 예전에 만든 6글자 비밀번호 백업도 그대로 열려요", "👆 문장 버튼과 왼쪽 아래 버전 글씨를 손가락으로 누르기 쉽게 키웠어요", "🔤 '안드로이드'처럼 낱말 중간에서 줄이 바뀌지 않게 했어요", "🚀 기록이 많아도 빨리 열리게 최근 60개부터 보여 주고, '이전 기록 더 보기'로 더 볼 수 있어요", "💾 저장하지 못했을 때 안내를 '앱 저장 공간이 가득 차서…'로 알기 쉽게 바꾸고, 다시 실패하면 다시 알려 드려요", "🧭 버튼 이름을 다른 앱과 맞췄어요(예시로 둘러보기·예시 닫기·새 버전이 나왔어요)", "🛡 앱을 만드는 과정(GitHub 빌드)에 쓰는 도구를 정해진 판으로 고정해 더 안전하게 했어요"]}, {"v": "v1.18", "d": "2026.11.13", "items": ["🆘 위급 카드의 긴급 번호를 상대 언어가 아니라 '지금 있는 나라'로 골라요. 서울에서 영어를 골라도 미국 911이 아니라 한국 112·119가 나와요", "🌏 나라는 폰이 알아서 고르고(통신망·시간대), 위급 카드나 설정에서 바꿀 수 있어요. 다른 나라로 옮겨 가면 다시 알아서 골라요. 필리핀·싱가포르·호주·영국·캐나다 등 58개 나라 번호를 넣었어요", "🔒 백업 파일을 비밀번호(6글자 이상)로 잠글 수 있어요. 비밀번호를 아는 사람만 열 수 있어요", "🔠 설정에 글자 크기(보통·크게·아주 크게)가 생겼어요", "🗂 기록을 60개에서 200개까지 남겨요(설정에서 60·200·500개). 기록 찾기에 '공항 택시'처럼 여러 낱말을 쓰면 모두 들어간 기록만 보여요", "⭐ 내 문장 탭에서 '＋ 문장 쓰기'로 할 말을 미리 적어 두면 번역해서 바로 넣어 둬요", "🔢 버전 번호가 왼쪽 아래·설정·정보 창 어디서나 같은 번호로 보여요. 새 버전 확인은 버전 정보 창 한 곳에서 해요", "🛡 보안: 폰 자동 백업에 기록이 섞여 나가지 않게 하고, 바깥으로 여는 주소는 이 앱 GitHub 주소만, 앱 화면의 인터넷 연결은 새 버전 확인만 허락했어요", "👀 위쪽 아이콘 글자와 문장 버튼을 키우고, 위급 카드 빨간색을 더 진하게 해서 잘 보이게 했어요. 옆으로 밀면 더 있는 줄은 오른쪽 끝이 흐려져요", "💾 폰 저장 공간이 부족해서 저장하지 못하면 알려 드려요"]}, {"v": "v1.17", "d": "2026.11.12", "items": ["📦 앱 용량을 절반 가까이 줄였어요: 요즘 폰(64비트)에 맞는 번역 엔진만 넣었어요"]}, {"v": "v1.16", "d": "2026.11.08", "items": ["📖 내장 문장집: 영어·일본어·중국어·베트남어·태국어 문장은 처음부터 인터넷 없이 바로 (식당·호텔·교통·쇼핑·공항·위급)", "🗣️ 한글 발음: 문장집 번역 아래에 '곤니치와'처럼 한글로 읽는 법을 같이 보여 드려요", "⭐ 내 문장: 즐겨찾기한 말이 문장 줄 맨 앞 탭에 모여서 한 번에 다시 말해요", "✈️ Aero에서 다음 여행 나라 받기: 항공권 앱 Aero의 '이음으로 준비' 버튼을 누르면 출발 전에 그 나라 말로 바로 맞춰져요"]}, {"v": "v1.15", "d": "2026.11.05", "items": ["보안 강화: 앱 화면이 허락된 곳 말고는 스크립트를 불러오지 못하게 막고, 폰의 다른 파일을 읽지 못하게 하고, 업데이트 파일은 이 앱 저장소 주소에서만 받아요"]}, {"v": "v1.14", "d": "2026.11.05", "items": ["상황별 문장: 식당·호텔·교통·쇼핑·공항 문장을 눌러서 바로 (한 번 번역하면 다음부터 인터넷 없이 바로)", "해외에 가면 폰 시간대를 보고 상대 언어를 그 나라 말로 바꿀지 한 번 물어봐요"]}, {"v": "v1.13", "d": "2026.11.05", "items": ["크게 보기를 열면 밝은 곳에서도 잘 보이게 화면이 가장 밝아져요 (닫으면 원래대로)", "왼쪽 아래 버전 → 내 기록 백업: 기록을 파일로 저장했다가 새 폰에서 불러오기"]}, {"v": "v1.12", "d": "2026.11.01", "items": ["사진 번역(보기) 카드에도 크게 보기"]}, {"v": "v1.11", "d": "2026.11.01", "items": ["위급 카드가 지금 있는 나라 말로 떠요 (일본이면 일본어). 상대 언어로도 바꿀 수 있어요", "번역 기록에서 찾기, 자주 쓰는 번역은 ☆ 즐겨찾기 (오래돼도 안 지워져요)"]}, {"v": "v1.10", "d": "2026.11.01", "items": ["왼쪽 아래 버전을 누르면 앱 정보·업데이트 내용·개인정보를 볼 수 있어요", "새 버전이 나오면 버전 글씨가 노란색으로 바뀌어요"]}, {"v": "v1.8", "d": "2026.11.01", "items": ["첫 앱 버전: 듣기·말하기·보기와 새 기능 7가지", "처음 열면 빈 화면에서 시작 (예시는 '예시로 둘러보기'에서만)", "번역·글자 읽기를 폰 안에서, 번역 팩을 한 번 받으면 인터넷 없이도 번역", "카메라로 비추면 글자 위에 번역이 겹쳐 보여요", "환율을 하루 한 번 받고, 지금 있는 나라 통화·긴급 번호를 자동으로", "홈 화면 위젯"]}], "privacy": "대화·사진·기록은 폰 밖으로 보내지 않고 이 폰에만 저장돼요(폰 자동 백업에도 넣지 않아요). 인터넷은 번역 팩·글자 읽기 기능 받기(Google), 환율 받기(open.er-api.com), 새 버전 확인(GitHub)에만 써요.", "backup": {"keys": ["ieum.*"], "bridge": "Ieum"}};
+window.APP_INFO={"name": "이음", "repo": "mini-2026/ieum", "mount": "#verTxt", "notes": [{"v": "current", "d": "2026.11.26", "items": ["💾 '⭐ 내 문장 쓰기'·'주소 직접 쓰기'에서 글을 적다가 × 를 눌러도 '저장할까요?'라고 물어봐요. 적은 글이 말없이 사라지지 않아요", "🗑 번역된 기록도 하나씩 지울 수 있어요. 기록 아래 '지우기'를 누르면 돼요", "🧹 설정의 '기록 모두 지우기'를 눌러도 ⭐ 즐겨찾기한 기록과 내 문장은 남아요. 잘못 눌렀으면 '되돌리기'로 되살려요", "🔊 사진 번역(보기) 카드에도 '읽어 주기'가 생겨서 번역을 소리로 들려줄 수 있어요", "📷 카메라 권한을 거부했어도 '설정 열기'를 누르면 바로 허용하러 갈 수 있어요", "✍️ 글을 500자 넘게 넣으면 500자까지만 번역한다고 알려 드려요", "👀 좁은 화면에서도 언어 이름(한국어·영어)이 잘리지 않고, 버튼과 글씨를 더 크게 키웠어요", "✏️ 즐겨찾기 안내, 언어 바꾸기 안내, 주문하기 문구('메뉴를 눌러 담아 주세요'), 멈추기 버튼 그림을 알기 쉽게 다듬었어요", "🔒 개인정보 안내에 말소리 인식(Google 음성 인식)과 Google 번역 기능의 익명 사용 통계를 쉽게 적었어요"]}, {"v": "v1.26", "d": "2026.11.25", "items": ["⭐ 내 문장에 이미 있는 문장을 또 적으면 알려 드려요"]}, {"v": "v1.25", "d": "2026.11.20", "items": ["📝 적던 글 지키기: 글을 적다가 앱이 꺼져도 사라지지 않아요. 다시 열어 같은 칸을 열면 적던 글이 그대로 이어져요 (필요 없으면 '버리기'를 눌러 주세요)"]}, {"v": "v1.24", "d": "2026.11.20", "items": ["💾 '저장할까요?' 창에서 '다음부터 묻지 않고 바로 저장'을 누르면, 다음부터는 닫을 때 묻지 않고 저장해요. 저장한 뒤 뜨는 '다시 묻기'를 누르면 다시 물어봐요"]}, {"v": "v1.23", "d": "2026.11.20", "items": ["💾 글을 적던 창을 × 나 뒤로 가기로 닫으면 '저장할까요?'라고 물어봐요. '저장'·'저장 안 함'·'계속 적기' 중에 골라 주세요"]}, {"v": "v1.22", "d": "2026.11.20", "items": ["✋ 글을 적던 창의 바깥을 실수로 눌러도 창이 닫히지 않아요. 적던 내용이 사라지지 않게 '입력한 내용이 있어요'라고 알려 드려요. 닫으려면 × 버튼을 눌러 주세요", "↩️ 기록을 지운 뒤에도 몇 초 동안 '되돌리기'가 나와요. 잘못 지웠으면 눌러서 그대로 되살려요"]}, {"v": "v1.21", "d": "2026.11.18", "items": ["✏️ 문구 다듬기: 주소 고르는 창의 '고르세요'·'누르세요'를 '골라 주세요'·'눌러 주세요'로 부드럽게 바꿨어요"]}, {"v": "v1.20", "d": "2026.11.15", "items": ["✏️ 문구 다듬기: '말하세요'·'시작하세요'를 '말해 주세요'·'시작해요'처럼 부드럽게 바꾸고, 띄어쓰기(읽어 드려요·보여 드려요)를 맞췄어요. 비밀번호·저장 공간 안내를 다른 앱과 같은 말로 맞추고, '내 데이터 백업'을 '내 기록 백업'으로 바꿨어요"]}, {"v": "v1.19", "d": "2026.11.13", "items": ["⭐ '내 문장 쓰기'에서 번역을 못 해도(번역 팩이 없을 때 등) 적은 문장은 그대로 저장돼요. 앱을 다시 열면 알아서 번역해 보고, '번역 다시 시도'를 눌러도 돼요", "🌗 설정에 화면 색(폰 설정 따라·밝게·어둡게)이 생겼어요", "🔒 새로 만드는 백업 비밀번호는 8글자 이상이에요. 숫자만 쓰면 한 번 더 물어봐요. 예전에 만든 6글자 비밀번호 백업도 그대로 열려요", "👆 문장 버튼과 왼쪽 아래 버전 글씨를 손가락으로 누르기 쉽게 키웠어요", "🔤 '안드로이드'처럼 낱말 중간에서 줄이 바뀌지 않게 했어요", "🚀 기록이 많아도 빨리 열리게 최근 60개부터 보여 주고, '이전 기록 더 보기'로 더 볼 수 있어요", "💾 저장하지 못했을 때 안내를 '앱 저장 공간이 가득 차서…'로 알기 쉽게 바꾸고, 다시 실패하면 다시 알려 드려요", "🧭 버튼 이름을 다른 앱과 맞췄어요(예시로 둘러보기·예시 닫기·새 버전이 나왔어요)", "🛡 앱을 만드는 과정(GitHub 빌드)에 쓰는 도구를 정해진 판으로 고정해 더 안전하게 했어요"]}, {"v": "v1.18", "d": "2026.11.13", "items": ["🆘 위급 카드의 긴급 번호를 상대 언어가 아니라 '지금 있는 나라'로 골라요. 서울에서 영어를 골라도 미국 911이 아니라 한국 112·119가 나와요", "🌏 나라는 폰이 알아서 고르고(통신망·시간대), 위급 카드나 설정에서 바꿀 수 있어요. 다른 나라로 옮겨 가면 다시 알아서 골라요. 필리핀·싱가포르·호주·영국·캐나다 등 58개 나라 번호를 넣었어요", "🔒 백업 파일을 비밀번호(6글자 이상)로 잠글 수 있어요. 비밀번호를 아는 사람만 열 수 있어요", "🔠 설정에 글자 크기(보통·크게·아주 크게)가 생겼어요", "🗂 기록을 60개에서 200개까지 남겨요(설정에서 60·200·500개). 기록 찾기에 '공항 택시'처럼 여러 낱말을 쓰면 모두 들어간 기록만 보여요", "⭐ 내 문장 탭에서 '＋ 문장 쓰기'로 할 말을 미리 적어 두면 번역해서 바로 넣어 둬요", "🔢 버전 번호가 왼쪽 아래·설정·정보 창 어디서나 같은 번호로 보여요. 새 버전 확인은 버전 정보 창 한 곳에서 해요", "🛡 보안: 폰 자동 백업에 기록이 섞여 나가지 않게 하고, 바깥으로 여는 주소는 이 앱 GitHub 주소만, 앱 화면의 인터넷 연결은 새 버전 확인만 허락했어요", "👀 위쪽 아이콘 글자와 문장 버튼을 키우고, 위급 카드 빨간색을 더 진하게 해서 잘 보이게 했어요. 옆으로 밀면 더 있는 줄은 오른쪽 끝이 흐려져요", "💾 폰 저장 공간이 부족해서 저장하지 못하면 알려 드려요"]}, {"v": "v1.17", "d": "2026.11.12", "items": ["📦 앱 용량을 절반 가까이 줄였어요: 요즘 폰(64비트)에 맞는 번역 엔진만 넣었어요"]}, {"v": "v1.16", "d": "2026.11.08", "items": ["📖 내장 문장집: 영어·일본어·중국어·베트남어·태국어 문장은 처음부터 인터넷 없이 바로 (식당·호텔·교통·쇼핑·공항·위급)", "🗣️ 한글 발음: 문장집 번역 아래에 '곤니치와'처럼 한글로 읽는 법을 같이 보여 드려요", "⭐ 내 문장: 즐겨찾기한 말이 문장 줄 맨 앞 탭에 모여서 한 번에 다시 말해요", "✈️ Aero에서 다음 여행 나라 받기: 항공권 앱 Aero의 '이음으로 준비' 버튼을 누르면 출발 전에 그 나라 말로 바로 맞춰져요"]}, {"v": "v1.15", "d": "2026.11.05", "items": ["보안 강화: 앱 화면이 허락된 곳 말고는 스크립트를 불러오지 못하게 막고, 폰의 다른 파일을 읽지 못하게 하고, 업데이트 파일은 이 앱 저장소 주소에서만 받아요"]}, {"v": "v1.14", "d": "2026.11.05", "items": ["상황별 문장: 식당·호텔·교통·쇼핑·공항 문장을 눌러서 바로 (한 번 번역하면 다음부터 인터넷 없이 바로)", "해외에 가면 폰 시간대를 보고 상대 언어를 그 나라 말로 바꿀지 한 번 물어봐요"]}, {"v": "v1.13", "d": "2026.11.05", "items": ["크게 보기를 열면 밝은 곳에서도 잘 보이게 화면이 가장 밝아져요 (닫으면 원래대로)", "왼쪽 아래 버전 → 내 기록 백업: 기록을 파일로 저장했다가 새 폰에서 불러오기"]}, {"v": "v1.12", "d": "2026.11.01", "items": ["사진 번역(보기) 카드에도 크게 보기"]}, {"v": "v1.11", "d": "2026.11.01", "items": ["위급 카드가 지금 있는 나라 말로 떠요 (일본이면 일본어). 상대 언어로도 바꿀 수 있어요", "번역 기록에서 찾기, 자주 쓰는 번역은 ☆ 즐겨찾기 (오래돼도 안 지워져요)"]}, {"v": "v1.10", "d": "2026.11.01", "items": ["왼쪽 아래 버전을 누르면 앱 정보·업데이트 내용·개인정보를 볼 수 있어요", "새 버전이 나오면 버전 글씨가 노란색으로 바뀌어요"]}, {"v": "v1.8", "d": "2026.11.01", "items": ["첫 앱 버전: 듣기·말하기·보기와 새 기능 7가지", "처음 열면 빈 화면에서 시작 (예시는 '예시로 둘러보기'에서만)", "번역·글자 읽기를 폰 안에서, 번역 팩을 한 번 받으면 인터넷 없이도 번역", "카메라로 비추면 글자 위에 번역이 겹쳐 보여요", "환율을 하루 한 번 받고, 지금 있는 나라 통화·긴급 번호를 자동으로", "홈 화면 위젯"]}], "privacy": "번역한 글·사진·기록은 이 폰에만 저장돼요(폰 자동 백업에도 넣지 않아요). 글 번역과 사진 글자 읽기는 폰 안에서 해요. 말소리를 글로 바꾸는 건 폰에 있는 Google 음성 인식을 써서, 인터넷이 켜져 있으면 말소리가 Google로 갈 수 있어요. Google 번역 기능은 어떤 기능을 얼마나 썼는지 같은 익명 사용 통계를 Google에 보내요. 그 밖에 인터넷은 번역 팩·글자 읽기 기능 받기(Google), 환율 받기(open.er-api.com), 새 버전 확인(GitHub)에만 써요.", "backup": {"keys": ["ieum.*"], "bridge": "Ieum"}};
 window.APP_INFO.online=!!window.Ieum;
 window.APP_INFO.version=function(){return window.IEUM_VER()};
 </script>
