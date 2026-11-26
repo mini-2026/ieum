@@ -80,7 +80,7 @@ upd = ''.join(
     f'<div class="n"><b>v{e(str(n.get("v","")))}</b> <span>{e(str(n.get("d","")))}</span><ul>'
     + ''.join(f'<li>{e(str(i))}</li>' for i in (n.get('items') or [])) + '</ul></div>'
     for n in notes) or '<p>업데이트 내용은 앱 안 왼쪽 아래 버전을 눌러 볼 수 있어요.</p>'
-web = (f'<a class="b2" href="app/">📱 아이폰·웹에서 열기</a>' if about.get('web') else '<p class="v">아이폰에서는 아직 쓸 수 없어요. 안드로이드 폰에서만 돼요.</p>')
+web = (f'<a class="b2" href="app/">🌐 웹페이지</a>' if about.get('web') else '<p class="v">아이폰에서는 아직 쓸 수 없어요. 안드로이드 폰에서만 돼요.</p>')
 # 개인정보: 앱 안 정보 창(APP_INFO.privacy)과 같은 문구를 써요. 없으면 about.json의 privacy, 그것도 없으면 기본 문구
 privacy = e(app_privacy() or about.get('privacy') or '입력한 내용은 내 휴대폰에만 저장돼요. 따로 모으거나 보내지 않아요.')
 
