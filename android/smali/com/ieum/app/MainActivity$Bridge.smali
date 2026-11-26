@@ -1281,6 +1281,40 @@
     return-void
 .end method
 
+.method public appSettings()V
+    .locals 5
+    .annotation runtime Landroid/webkit/JavascriptInterface;
+    .end annotation
+
+    :try_start_0
+    iget-object v0, p0, Lcom/ieum/app/MainActivity$Bridge;->this$0:Lcom/ieum/app/MainActivity;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "package"
+
+    const/4 v3, 0x0
+
+    invoke-static {v2, v1, v3}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    new-instance v4, Landroid/content/Intent;
+
+    const-string v2, "android.settings.APPLICATION_DETAILS_SETTINGS"
+
+    invoke-direct {v4, v2, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    invoke-virtual {v0, v4}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-void
+.end method
+
 .method public photo(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 8
     .annotation runtime Landroid/webkit/JavascriptInterface;

@@ -31,6 +31,21 @@ def find_notes():
                     return arr
     return []
 
+def app_privacy():
+    """앱 안 정보 창의 개인정보 문구 (\"privacy\": \"...\")를 그대로 가져와요."""
+    pat = re.compile(r'"privacy"\s*:\s*"')
+    for root, _, files in os.walk(src):
+        for f in files:
+            if f.endswith(('.html', '.js')):
+                s = open(os.path.join(root, f), encoding='utf-8', errors='ignore').read()
+                m = pat.search(s)
+                if m:
+                    try:
+                        return json.JSONDecoder().raw_decode(s[m.end() - 1:])[0]
+                    except Exception:
+                        pass
+    return ''
+
 def literal(s, i):
     """Read the array literal starting at s[i] (JSON, or a plain JS literal evaluated without any globals)."""
     try:
@@ -65,7 +80,9 @@ upd = ''.join(
     f'<div class="n"><b>v{e(str(n.get("v","")))}</b> <span>{e(str(n.get("d","")))}</span><ul>'
     + ''.join(f'<li>{e(str(i))}</li>' for i in (n.get('items') or [])) + '</ul></div>'
     for n in notes) or '<p>업데이트 내용은 앱 안 왼쪽 아래 버전을 눌러 볼 수 있어요.</p>'
-web = (f'<a class="b2" href="app/">📱 아이폰·웹에서 열기</a>' if about.get('web') else '')
+web = (f'<a class="b2" href="app/">📱 아이폰·웹에서 열기</a>' if about.get('web') else '<p class="v">아이폰에서는 아직 쓸 수 없어요. 안드로이드 폰에서만 돼요.</p>')
+# 개인정보: 앱 안 정보 창(APP_INFO.privacy)과 같은 문구를 써요. 없으면 about.json의 privacy, 그것도 없으면 기본 문구
+privacy = e(app_privacy() or about.get('privacy') or '입력한 내용은 내 휴대폰에만 저장돼요. 따로 모으거나 보내지 않아요.')
 
 page = f'''<!doctype html><html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -83,10 +100,10 @@ h2{{font-size:18px;margin:0 0 8px}}ul{{margin:4px 0;padding-left:20px}}.n{{borde
 <section><h2>이런 앱이에요</h2><ul>{intro}</ul></section>
 <section class="w"><h2>설치 방법</h2><ul>
 <li>받은 파일을 눌러 설치해요. "출처를 알 수 없는 앱" 안내가 나오면 허용해 주세요.</li>
-<li>예전 주소에서 받은 앱이 있으면, 앱 안에서 백업을 먼저 하고 지운 뒤 설치해 주세요. 설치한 다음 백업을 불러오면 돼요.</li>
+<li>처음 받는 분은 그냥 설치하면 돼요. 예전에 다른 주소에서 받은 {e(about["name"])} 앱이 폰에 있다면, 앱 안에서 백업을 먼저 하고 그 앱을 지운 뒤 설치해 주세요. 설치한 다음 백업을 불러오면 돼요.</li>
 <li>설치한 뒤에는 앱 안에서 새 버전을 알려 드려요.</li></ul></section>
 <section id="updates"><h2>업데이트 내용</h2>{upd}</section>
-<section><h2>개인정보</h2><ul><li>입력한 내용은 내 휴대폰에만 저장돼요. 따로 모으거나 보내지 않아요.</li></ul></section>
+<section><h2>개인정보</h2><ul><li>{privacy}</li></ul></section>
 </main></body></html>'''
 open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(page)
 # old in-app links (guide.html etc.) land on the download page
