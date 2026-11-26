@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" package="com.ieum.app" platformBuildVersionCode="34" platformBuildVersionName="14">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
     <queries>
         <intent>
@@ -27,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <provider android:authorities="com.ieum.app.upd" android:exported="false" android:grantUriPermissions="true" android:name="upd.P"/>
         <receiver android:exported="false" android:label="@string/app_name" android:name="com.ieum.app.IeumWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
