@@ -1441,6 +1441,16 @@
 .method private synthetic lambda$backupResult$21(Landroid/net/Uri;)V
     .locals 4
 
+    invoke-static {p0, p1}, Lupd/U;->size(Landroid/content/Context;Landroid/net/Uri;)J
+
+    move-result-wide v2
+
+    const-wide/32 v0, 0xa00000
+
+    cmp-long v0, v2, v0
+
+    if-lez v0, :big_known
+
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1476,20 +1486,18 @@
 
     move-result v2
 
-    const/high16 v3, 0x5000000
+    const/high16 v3, 0xa00000
 
     if-gt v2, v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Ljava/io/IOException;
+    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
 
-    const-string v1, "too big"
+    const-wide/16 v2, -0x1
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    goto :big_known
 
     :catchall_0
     move-exception v0
@@ -1539,7 +1547,32 @@
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
     :catch_0
-    const/4 v1, 0x0
+    const-string p1, "window.AppInfo&&AppInfo.backupOpenFail&&AppInfo.backupOpenFail('read',0)"
+
+    invoke-direct {p0, p1}, Lcom/ieum/app/MainActivity;->js(Ljava/lang/String;)V
+
+    return-void
+
+    :big_known
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string v0, "window.AppInfo&&AppInfo.backupOpenFail&&AppInfo.backupOpenFail('big',"
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/ieum/app/MainActivity;->js(Ljava/lang/String;)V
+
+    return-void
 
     :goto_3
     new-instance p1, Ljava/lang/StringBuilder;
@@ -2629,11 +2662,9 @@
 .method private synthetic lambda$showUpdate$19(Ljava/lang/String;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    const-string p1, "window.AppInfo&&AppInfo.updStart&&AppInfo.updStart()"
 
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Lcom/ieum/app/MainActivity;->openSafe(Landroid/net/Uri;)V
+    invoke-direct {p0, p1}, Lcom/ieum/app/MainActivity;->js(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -4240,7 +4271,7 @@
 
     invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string p1, "\uc774 \ub098\uc654\uc5b4\uc694.\n\'\uc5c5\ub370\uc774\ud2b8\'\ub97c \ub204\ub974\uba74 \ud30c\uc77c\uc774 \ubc1b\uc544\uc838\uc694. \ub2e4 \ubc1b\uc73c\uba74 \ud30c\uc77c\uc744 \ub20c\ub7ec \uc124\uce58\ud574 \uc8fc\uc138\uc694. \uae30\ub85d\uacfc \uc124\uc815\uc740 \uadf8\ub300\ub85c \ub0a8\uc544\uc694."
+    const-string p1, "\uc774 \ub098\uc654\uc5b4\uc694.\n\'\uc5c5\ub370\uc774\ud2b8\'\ub97c \ub204\ub974\uba74 \uc571 \uc548\uc5d0\uc11c \uc0c8 \ubc84\uc804\uc744 \ubc1b\uace0 \uc124\uce58 \ud654\uba74\uc744 \uc5f4\uc5b4\uc694. \uae30\ub85d\uacfc \uc124\uc815\uc740 \uadf8\ub300\ub85c \ub0a8\uc544\uc694."
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4687,6 +4718,8 @@
 
     invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
 
+    invoke-static {p0, p1}, Lupd/U;->onResult(Landroid/app/Activity;I)V
+
     invoke-direct {p0, p1, p2, p3}, Lcom/ieum/app/MainActivity;->backupResult(IILandroid/content/Intent;)Z
 
     move-result v0
@@ -4879,6 +4912,8 @@
 
     .line 1
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+
+    invoke-static {p0}, Lupd/U;->clean(Landroid/content/Context;)V
 
     .line 2
     .line 3
