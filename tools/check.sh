@@ -16,5 +16,6 @@ chk "exported 화면" sh -c "grep -o '<[a-z]* [^>]*exported=\"true\"[^>]*' $M | 
 chk "권한" sh -c "grep -o 'uses-permission android:name=\"android.permission.[A-Z_]*' $M | sed 's/.*permission\.//' | sort -u | grep -vE 'CAMERA|ACCESS_NETWORK_STATE|INTERNET|POST_NOTIFICATIONS|SCHEDULE_EXACT_ALARM|USE_EXACT_ALARM|RECEIVE_BOOT_COMPLETED|VIBRATE|WAKE_LOCK|REQUEST_INSTALL_PACKAGES'"
 chk "provider 잠금" sh -c "grep -o '<provider [^>]*' $M | grep -v 'exported=\"false\"'"
 chk "앱 안 업데이트 주소 제한" sh -c "grep -q 'release-assets.githubusercontent.com' android/smali/upd/U.smali && grep -q 'setInstanceFollowRedirects' android/smali/upd/U.smali || echo 'upd/U.smali 주소·리디렉트 제한 확인 필요'"
+chk "버전 표시" sh -c 'v=$(grep -oP "versionName:\s*\x27?\K[0-9.]+" android/apktool.yml); grep -q "var b = .$v.;" android/assets/index.html || echo "index.html 버전 번호(var b)가 apktool.yml($v)과 달라요"'
 chk "apktool 해시 검증" sh -c "grep -q 'sha256sum -c' .github/workflows/build.yml || echo 'build.yml 해시 비교 없음'"
 echo "✅ 서명 키: GitHub Secret(SIGNING_KEY_B64)에서 읽고, 예전 키와 같은지 빌드 때 확인"
