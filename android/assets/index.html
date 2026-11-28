@@ -7,7 +7,7 @@
 /* 버전 번호는 한 곳에서만: 앱(APK)은 폰이 알려 주는 실제 버전, 아니면 빌드할 때 적어 넣는 번호 */
 window.IEUM_VER = function () {
   try { var v = window.Ieum && window.Ieum.version(); if (v && /^\d+(\.\d+)*$/.test(v)) return v; } catch (e) { /* 미리보기 */ }
-  var b = '1.28';
+  var b = '1.31';
   return /^\d+(\.\d+)*$/.test(b) ? b : '1.0';
 };
 </script>
